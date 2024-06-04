@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <h1></h1>
+    <img class="profile" src="Images/ProfileIcon.png" alt="Hmmmm Coffee" width="25" height="25">
+    <img class="basket" src="Images/paperbag.png" alt="Hmmmm Coffee" width="25" height="25">
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="menu.html">Menu</a> </li>
+            <li><a href="blog.html">Blog</a> </li>
+            <li><a href="about.html">About Us</a> </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="box" style="display:block">
+            <div class="HC" onclick="showHot()">
+                <p class="pp">Hot Coffee</p>
+            </div>
+            <div class="IC" onclick="showIced()">
+                <p class="pp">Iced Coffee</p>
+            </div>
+            <div class="CB" onclick="showCB()">
+                <p class="pp">Coffee in Bag</p>
+            </div>
+            <div class="FC" onclick="showCB()">
+                <p class="pp2">Coffee-Flavored Baked Goods</p>
+            </div>
+
+            <div class="Order">
+                <!--HOT COFFEE LIST -->
+                <div id="hotCoffeeList" style="display:block">
+                    <div class="containerprod1">
+                        <div class="boxprod1">
+                            <div class="prod1">
+                                <img src="Images/Kopiko.jpg" alt="Hmmmm Coffee" class="prod1" width="235">
+                            </div>
+                        </div>
+                        <p class="prod1name"><b>Product Name </b><br><br> I think this Coffee is Kopiko and many more
+                            will come</p>
+                    </div>
+                    <div class="containerprod2">
+                        <div class="boxprod2">
+                            <div class="prod2">
+                                <img src="Images/HotCoffee2.webp" alt="Hmmmm Coffee" class="prod2" width="350">
+                            </div>
+                        </div>
+                        <p class="prod2name"><b>Product Name </b><br><br> I think this tHE cOFfee Is A coffee</p>
+                    </div>
+                    <div class="containerprod3">
+                        <div class="boxprod3">
+                            <div class="prod3">
+                                <img src="Images/HotCoffee3.webp" alt="Hmmmm Coffee" class="prod3" width="235">
+                            </div>
+                        </div>
+                        <p class="prod3name"><b>Product Name </b><br><br> Might be Almond Coffee, That's a thing?</p>
+                    </div>
+                    <div class="containerprod4">
+                        <div class="boxprod4">
+                            <div class="prod4">
+                                <img src="Images/HotCoffee4.jpg" alt="Hmmmm Coffee" class="prod4" width="350">
+                            </div>
+                        </div>
+                        <p class="prod4name"><b>Product Name </b><br><br> That's just Art right there</p>
+                    </div>
+                    <div class="containerprod5">
+                        <div class="boxprod5">
+                            <div class="prod5">
+                                <img src="Images/HotCoffee5.jpg" alt="Hmmmm Coffee" class="prod5" width="235">
+                            </div>
+                        </div>
+                        <p class="prod5name"><b>Product Name </b><br><br> Creamy, no no not that kind of Cream</p>
+                    </div>
+                </div>
+
+                <!--ICE COFFEELIST -->
+                <div id="icedCoffeeList" style="display:none">
+                    <div class="containerprod1">
+                        <div class="boxprod1">
+                            <div class="prod1">
+                                <img src="Images/IceCoffee2.jpg" alt="Hmmmm Coffee" class="prod1" width="250">
+                            </div>
+                        </div>
+                        <p class="prod1name"><b>Product Name </b><br><br> Very Cold</p>
+                    </div>
+                    <div class="containerprod2">
+                        <div class="boxprod2">
+                            <div class="prod2">
+                                <img src="Images/Ice Coffee.webp" alt="Hmmmm Coffee" class="prod2" width="350">
+                            </div>
+                        </div>
+                        <p class="prod2name"><b>Product Name </b><br><br> IT'S OUT OF THE SCREEN</p>
+                    </div>
+                    <div class="containerprod3">
+                        <div class="boxprod3">
+                            <div class="prod3">
+                                <img src="Images/IceCoffee3.jpg" alt="Hmmmm Coffee" class="prod3" width="235">
+                            </div>
+                        </div>
+                        <p class="prod3name"><b>Product Name </b><br><br> Looks like a cocktail</p>
+                    </div>
+                    <div class="containerprod4">
+                        <div class="boxprod4">
+                            <div class="prod4">
+                                <img src="Images/IceCoffee4.jpg" alt="Hmmmm Coffee" class="prod4" width="300">
+                            </div>
+                        </div>
+                        <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
+                    </div>
+                    <div class="containerprod5">
+                        <div class="boxprod5">
+                            <div class="prod5">
+                                <img src="Images/IceCoffee5.jpg" alt="Hmmmm Coffee" class="prod5" width="235">
+                            </div>
+                        </div>
+                        <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>
+                    </div>
+                </div>
+
+                <!--COFFEE BAG LIST -->
+                <div id="CBList" style="display:none">
+                    <div class="containerprod1">
+                        <div class="boxprod1">
+                            <div class="prod1">
+                                <img src="Images/IceCoffee2.jpg" alt="Hmmmm Coffee" class="prod1" width="250">
+                            </div>
+                        </div>
+                        <p class="prod1name"><b>Product Name </b><br><br> Xbox live</p>
+                    </div>
+                    <div class="containerprod2">
+                        <div class="boxprod2">
+                            <div class="prod2">
+                                <img src="Images/Ice Coffee.webp" alt="Hmmmm Coffee" class="prod2" width="350">
+                            </div>
+                        </div>
+                        <p class="prod2name"><b>Product Name </b><br><br> Grenade in the Gravy</p>
+                    </div>
+                    <div class="containerprod3">
+                        <div class="boxprod3">
+                            <div class="prod3">
+                                <img src="Images/IceCoffee3.jpg" alt="Hmmmm Coffee" class="prod3" width="235">
+                            </div>
+                        </div>
+                        <p class="prod3name"><b>Product Name </b><br><br> Napalm in the Nachos</p>
+                    </div>
+                    <div class="containerprod4">
+                        <div class="boxprod4">
+                            <div class="prod4">
+                                <img src="Images/IceCoffee4.jpg" alt="Hmmmm Coffee" class="prod4" width="300">
+                            </div>
+                        </div>
+                        <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
+                    </div>
+                    <div class="containerprod5">
+                        <div class="boxprod5">
+                            <div class="prod5">
+                                <img src="Images/IceCoffee5.jpg" alt="Hmmmm Coffee" class="prod5" width="235">
+                            </div>
+                        </div>
+                        <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>
+                    </div>
+                </div>
+
+                <!--BAKED LIST -->
+                <div id="BakedList" style="display:none">
+                    <div class="containerprod1">
+                        <div class="boxprod1">
+                            <div class="prod1">
+                                <img src="Images/IceCoffee2.jpg" alt="Hmmmm Coffee" class="prod1" width="250">
+                            </div>
+                        </div>
+                        <p class="prod1name"><b>Product Name </b><br><br> A Bag in the Coffee</p>
+                    </div>
+                    <div class="containerprod2">
+                        <div class="boxprod2">
+                            <div class="prod2">
+                                <img src="Images/Ice Coffee.webp" alt="Hmmmm Coffee" class="prod2" width="350">
+                            </div>
+                        </div>
+                        <p class="prod2name"><b>Product Name </b><br><br> Grenade in the Gravy</p>
+                    </div>
+                    <div class="containerprod3">
+                        <div class="boxprod3">
+                            <div class="prod3">
+                                <img src="Images/IceCoffee3.jpg" alt="Hmmmm Coffee" class="prod3" width="235">
+                            </div>
+                        </div>
+                        <p class="prod3name"><b>Product Name </b><br><br> Sayonara</p>
+                    </div>
+                    <div class="containerprod4">
+                        <div class="boxprod4">
+                            <div class="prod4">
+                                <img src="Images/IceCoffee4.jpg" alt="Hmmmm Coffee" class="prod4" width="300">
+                            </div>
+                        </div>
+                        <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
+                    </div>
+                    <div class="containerprod5">
+                        <div class="boxprod5">
+                            <div class="prod5">
+                                <img src="Images/IceCoffee5.jpg" alt="Hmmmm Coffee" class="prod5" width="235">
+                            </div>
+                        </div>
+                        <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>
+                    </div>
+                </div>
+            </div><!--End of ORDER div -->
+        </div><!--End of BOX div -->
+    </main>
+</body>
+
+</html>
