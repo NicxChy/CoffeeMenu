@@ -7,11 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="style2.css">
     <script src="./script.js"></script>
+    <script src="./profile.js"></script>
 </head>
 
 <body>
     <h1></h1>
-    <img class="profile" src="Images/ProfileIcon.png" alt="Hmmmm Coffee" width="25" height="25">
+    <img class="profile" src="Images/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee" width="25" height="25">
     <img class="basket" src="Images/paperbag.png" alt="Hmmmm Coffee" width="25" height="25">
     <nav class="navbar">
         <ul>
@@ -21,6 +22,20 @@
             <li><a href="about.html">About Us</a> </li>
         </ul>
     </nav>
+    <div class="container">
+        <div class="heading">Sign In</div>
+        <form action="" class="form">
+            <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
+            <input required="" class="input" type="password" name="password" id="password" placeholder="Password">
+            <span class="forgot-password"><a href="#">Forgot Password ?</a></span>
+            <input class="login-button" type="submit" value="Sign In">
+
+        </form>
+
+
+        
+
+
     <main>
         <div class="box" style="display:block">
             <div class="HC" onclick="showHot()">
