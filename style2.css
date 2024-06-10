@@ -17,61 +17,8 @@ body {
 .center {
     text-align: center;
 }
-.profile {
-  transform-origin: 10% 65%;
-  cursor: pointer;
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  padding-top: 1.5%;
-  padding-right: 6%;
-  transition: 0.2s;
-}
 
-.profile:hover {
-  transform: scale(1.1);
-}
 
-.basket {
-  transform-origin: 10% 65%;
-  cursor: pointer;
-  position: absolute;
-  top: 8px;
-  right: 16px;
-  font-size: 18px;
-  padding-top: 1.5%;
-  padding-right: 2%;
-  transition: 0.2s;
-}
-
-.basket:hover {
-  transform: scale(1.1);
-}
-.navbar ul{
-    list-style-type: none;
-    background-color: rgb(26,39,49);
-    padding: 0px;
-    margin: 0px;
-    overflow: hidden;
-}
-.navbar a{
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
-}
-.navbar a:hover{
-    font-size: 105%;
-    background-color: rgb(110, 88, 68);
-    transition: background-color 0.3s;
-    transition: font-size 0.3s;
-}
-
-.navbar li{
-    float: left;
- 
-}
 
 .blog{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -100,6 +47,7 @@ body {
   }
 
 .box {
+    
     position: relative;
     width: 1750px;
     height: 750px;
@@ -109,6 +57,7 @@ body {
     border-radius: 20px;
   }
   .box .HC{
+    
     cursor: pointer;
     position: absolute;
     overflow: hidden;
@@ -394,6 +343,7 @@ body {
     word-wrap: break-word;
     text-shadow: black;
   }
+
 
 
 

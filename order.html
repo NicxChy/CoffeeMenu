@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="order.css">
+    <script src="./script.js"></script>
+    <script src="./profile.js"></script>
+    <script src="./order.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="orderBox" style="display:block">
+            <div>
+                <input id="inputQuant" class="inputQuantity" type="number" value="0"></input>
+                <button id="addAmount" class="addButton" onclick="increment()">+</button>
+                <button id="minusAmount" class="minusButton" onclick="decrement()">-</button>
+            </div>
+
+            <div class="dropdown-Milk">
+                <input class="dropbtn-Milk" type="text"></input>
+                <div class="dropdown-content-Milk">
+                    <a href="#">Fresh</a>
+                    <a href="#">Fortified</a>
+                    <a href="#">Fertilized</a>
+                </div>
+            </div>
+
+            <div class="dropdown-Sugar">
+                <input class="dropbtn-Sugar" type="text"></input>
+                <div class="dropdown-content-Sugar">
+                    <a href="#">0%</a>
+                    <a href="#">25%</a>
+                    <a href="#">50%</a>
+                    <a href="#">69%</a>
+                    <a href="#">75%</a>
+                    <a href="#">100%</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <input class="dropbtn" type="text"></input>
+                <div class="dropdown-content">
+                    <a href="#">Small</a>
+                    <a href="#">Medium</a>
+                    <a href="#">Thicc</a>
+                </div>
+            </div>
+
+            <div class="BorderLine"> </div>
+
+            <div class="OrderProduct">
+                <img src="Images/Kopiko.jpg" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

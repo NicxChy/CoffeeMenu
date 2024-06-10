@@ -1,0 +1,217 @@
+h1 {
+    text-align: center;
+}
+
+main {
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+body {
+    margin: 0px;
+    background-color: rgb(26, 39, 49);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+input, select, textarea{
+    color: #3a3127;
+}
+
+textarea:focus, input:focus {
+    color: #3a3127;
+}
+input::placeholder{
+    color: #3a3127;
+  }
+
+.inputQuantity {
+    text-indent: 35px;
+    position: absolute;
+    margin-left: 100px;  
+    margin-top: 165px;
+    background-color: rgb(255, 252, 248);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+
+  .addButton {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 105px;  
+    margin-top: 172px;
+    background-color: rgb(255, 252, 248);
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  }
+  
+  .minusButton {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 295px;  
+    margin-top: 172px;
+    background-color: rgb(255, 252, 248);
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+  }
+ 
+
+/* Milk */
+.dropbtn-Milk {
+    z-index: 3;
+    position: absolute;
+    margin-left: 100px;  
+    margin-top: 450px;
+    background-color: rgb(255, 252, 248);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .dropdown-Milk {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+  }
+  .dropdown-content-Milk {
+    position: absolute;
+    margin-left: 100px;  
+    margin-top: 500px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 225px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+  }
+  .dropdown-content-Milk a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content-Milk a:hover {background-color: rgb(255, 252, 248); border-radius: 10px;}
+  .dropdown-Milk:hover .dropdown-content-Milk {display: block;}
+  .dropdown-Milk:hover .dropbtn-Milk {background-color: rgb(255, 252, 248);}
+
+/* Sugar Level */
+.dropbtn-Sugar {
+    position: absolute;
+    margin-left: 450px;  
+    margin-top: 450px;
+    background-color: rgb(255, 252, 248);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .dropdown-Sugar {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content-Sugar {
+    position: absolute;
+    margin-left: 450px;  
+    margin-top: 500px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 225px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+  }
+  .dropdown-content-Sugar a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content-Sugar a:hover {background-color: rgb(255, 252, 248); border-radius: 10px;}
+  .dropdown-Sugar:hover .dropdown-content-Sugar {display: block;}
+  .dropdown-Sugar:hover .dropbtn-Sugar {background-color: rgb(255, 252, 248);}
+
+
+  /* Size*/
+  .dropbtn {
+    position: absolute;
+    margin-left: 450px;  
+    margin-top: 150px;
+    background-color: rgb(255, 252, 248);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    position: absolute;
+    margin-left: 450px;  
+    margin-top: 200px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 225px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: rgb(255, 252, 248); border-radius: 10px;}
+  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropbtn {background-color: rgb(255, 252, 248);}
+
+
+
+
+
+.orderBox {
+    z-index: 1;
+    margin-left: 7%;
+    position: absolute;
+    width: 1550px;
+    height: 750px;
+    background: linear-gradient(45deg, rgb(255, 252, 248) 0%, rgb(211, 203, 182) 100%);
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.orderBox .OrderProduct {
+    
+    margin-top: 5%;
+    margin-left: 33%;
+    border-radius: 20px;
+}
+
+.BorderLine{
+    margin-top: 50px;
+    margin-left: 750px;
+    position: absolute;
+    background-color: black;
+    width: 5px;
+    height: 600px;
+}
+
