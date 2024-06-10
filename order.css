@@ -7,7 +7,11 @@ main {
     margin-right: 20px;
 
 }
-
+input::placeholder {
+  font-weight: bold;
+  opacity: 0.5;
+  color: red;
+}
 body {
     margin: 0px;
     background-color: rgb(26, 39, 49);
@@ -21,9 +25,7 @@ input, select, textarea{
 textarea:focus, input:focus {
     color: #3a3127;
 }
-input::placeholder{
-    color: #3a3127;
-  }
+
 
 .inputQuantity {
     text-indent: 35px;
@@ -183,7 +185,6 @@ input::placeholder{
   .dropdown-content a:hover {background-color: rgb(255, 252, 248); border-radius: 10px;}
   .dropdown:hover .dropdown-content {display: block;}
   .dropdown:hover .dropbtn {background-color: rgb(255, 252, 248);}
-
 
 
 
