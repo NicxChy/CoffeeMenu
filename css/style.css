@@ -1,14 +1,18 @@
+@media screen and (min-width:500px) {
 h1 {
   text-align: center;
 }
 
 main {
+  display: flex;
+  flex-wrap: nowrap;
   margin-left: 20px;
   margin-right: 20px;
 
 }
 
 body {
+
   margin: 0px;
   background-color: rgb(26, 39, 49);
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -18,9 +22,10 @@ body {
   text-align: center;
 }
 
-
+  
 
 .coffee {
+  display: flex;
   color: white;
   font-size: 100%;
   margin-right: 30%;
@@ -50,14 +55,14 @@ body {
 
 .box {
   position: relative;
-  width: 850px;
+  width: 750px;
   height: 500px;
   background-color: rgb(152, 127, 98);
   padding: 10px;
-  margin: 35px;
+  margin: 10px;
   border-radius: 20px;
-
 }
+
 
 
 .box .second {
@@ -170,10 +175,9 @@ body {
 
 .coffeeImage {
   position: absolute;
-  z-index:-1;
-  top: 0px;
+  z-index: -1;
   right: -800px;
-  font-size: 18px;
+  top: -1px;
 }
 
 
@@ -368,11 +372,13 @@ body {
 .CB:Hover .bagimage {
   opacity: 100%;
 }
+
 .bagcontain {
   position: relative;
   width: 200px;
   height: 600px;
 }
+
 .bagimage {
   filter: blur(2px);
   position: absolute;
@@ -386,6 +392,7 @@ body {
   opacity: 0%;
   transition: opacity 0.5s;
 }
+
 .cc {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   position: absolute;
@@ -400,13 +407,14 @@ body {
   font-size: 20px;
   transition: 0.5s;
 }
+
 .CB:hover .cc {
   transform: translateY(-245px);
 }
 
 /* Coffee Bag */
 .FC {
-  z-index:-1;
+  z-index: -1;
   width: 200px;
   height: 600px;
   background: rgb(152, 127, 98);
@@ -435,11 +443,13 @@ body {
 .FC:Hover .filterimage {
   opacity: 100%;
 }
+
 .filtercontain {
   position: relative;
   width: 200px;
   height: 600px;
 }
+
 .filterimage {
   filter: blur(2px);
   position: absolute;
@@ -453,6 +463,7 @@ body {
   opacity: 0%;
   transition: opacity 0.5s;
 }
+
 .dd {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   position: absolute;
@@ -467,11 +478,8 @@ body {
   font-size: 20px;
   transition: 0.5s;
 }
+
 .FC:hover .dd {
   transform: translateY(-275px);
 }
-
-
-
-
-
+}

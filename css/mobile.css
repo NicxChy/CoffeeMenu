@@ -1,0 +1,457 @@
+h1 {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+body {
+
+    margin: 0px;
+    background-color: rgb(26, 39, 49);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.center {
+    text-align: center;
+}
+
+.box {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background-color: rgb(152, 127, 98);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.coffee{
+    color: white;
+    margin-left: 15px;
+}
+.coffeeImage {
+    display: none;
+}
+
+.menuFont {
+    color: white;
+    font-size: 25px;
+    margin-right: 10%;
+    margin-left: 5%;
+    margin-top: -2%;
+}
+
+.menuFont2 {
+    color: white;
+    text-shadow:
+        -2px -2px 0 rgb(94, 61, 49),
+        0 -2px 0 rgb(94, 61, 49),
+        2px -2px 0 rgb(94, 61, 49),
+        2px 0 0 rgb(94, 61, 49),
+        2px 2px 0 rgb(94, 61, 49),
+        0 2px 0 rgb(94, 61, 49),
+        -2px 2px 0 rgb(94, 61, 49),
+        -2px 0 0 rgb(94, 61, 49);
+}
+
+
+
+
+.box .second {
+    overflow: hidden;
+    width: 90%;
+    height: 40%;
+    margin: auto;
+    margin-top: 2%;
+    background: rgb(94, 61, 49);
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.box .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 100%);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    animation: slider 10s ease-in-out infinite alternate;
+}
+
+.box #img-1 {
+    background-image: url(https://media.istockphoto.com/id/1358132613/photo/refreshing-hot-cup-of-coffee-at-a-cafe.jpg?s=612x612&w=0&k=20&c=ObwIF28Vt3k93Nch9U4QYUdOwMA_eiMwVVCvKbypnNc=);
+    border-radius: 20px;
+    background-position: center;
+}
+
+.box #img-2 {
+    background-image: url(https://media.istockphoto.com/id/1467199060/photo/cup-of-coffee-with-smoke-and-coffee-beans-on-old-wooden-background.jpg?s=612x612&w=0&k=20&c=OnS8_6FM5ussfSGmjpDD-GofERg2UbItdxShIAA90sQ=);
+
+    border-radius: 20px;
+    background-position: center;
+}
+
+.box #img-3 {
+    background-image: url(https://img.freepik.com/free-photo/fresh-coffee-steams-wooden-table-close-up-generative-ai_188544-8923.jpg);
+
+    border-radius: 20px;
+    background-position: center;
+}
+
+.box #img-4 {
+    background-image: url(https://t4.ftcdn.net/jpg/01/05/90/77/360_F_105907729_4RzHYsHJ2UFt5koUI19fc6VzyFPEjeXe.jpg);
+
+    border-radius: 20px;
+    background-position: center;
+}
+
+/*
+    .box .button-holder .button{
+      background-color: white;
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      display: inline-block;
+      margin: .3rem;
+      
+    }
+    */
+
+
+@keyframes slider {
+    0% {
+        transform: translateX(0%);
+    }
+
+    10% {
+        transform: translateX(-100%);
+    }
+
+    20% {
+        transform: translateX(-100%);
+    }
+
+    30% {
+        transform: translateX(-200%);
+    }
+
+    40% {
+        transform: translateX(-200%);
+    }
+
+    50% {
+        transform: translateX(-200%);
+    }
+
+    60% {
+        transform: translateX(-300%);
+    }
+
+    70% {
+        transform: translateX(-300%);
+    }
+
+    80% {
+        transform: translateX(-300%);
+    }
+
+    90% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+
+}
+
+
+
+/* Hot Coffee */
+.HF {
+    width: 330px;
+    height: 100px;
+    background: rgb(152, 127, 98);
+    border-radius: 20px;
+    position: absolute;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 70px;
+    z-index: 1;
+}
+
+.HF .se {
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin-top: 2%;
+    margin: auto;
+    background: rgb(94, 61, 49);
+    border-radius: 20px;
+    transition: height 0.5s;
+}
+
+.HF:hover .se {
+    height: 25%;
+
+}
+
+.HF:Hover .HFimage {
+    opacity: 100%;
+}
+
+.HFcontain {
+    position: relative;
+    width: 200px;
+    height: 600px;
+}
+
+.HFimage {
+    filter: blur(1px);
+    position: absolute;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-left: 8px;
+    width: 89%;
+    height: 76%;
+    opacity: 50%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 0.5s;
+}
+
+.pp {
+    display: none;
+}
+
+.aa {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    letter-spacing: .2em;
+    text-indent: 5px;
+    text-align: center;
+    word-wrap: break-word;
+    margin-left: 20%;
+    margin-top: 15px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s;
+    text-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* Ice Coffee */
+.IC {
+    width: 330px;
+    height: 100px;
+    background: rgb(152, 127, 98);
+    border-radius: 20px;
+    position: absolute;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 210px;
+    z-index: 1;
+}
+
+.IC .ice {
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin-top: 2%;
+    margin: auto;
+    background: rgb(94, 61, 49);
+    border-radius: 20px;
+    transition: height 0.5s;
+}
+
+.IC:hover .ice {
+    height: 25%;
+}
+
+.IC:Hover .ICimage {
+    opacity: 100%;
+}
+
+.ICcontain {
+    position: relative;
+    width: 200px;
+    height: 600px;
+}
+
+.ICimage {
+    filter: blur(1px);
+    position: absolute;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-left: 8px;
+    width: 89%;
+    height: 76%;
+    opacity: 50%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 0.5s;
+}
+
+.bb {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    letter-spacing: .2em;
+    text-indent: 5px;
+    text-align: center;
+    word-wrap: break-word;
+    margin-left: 20%;
+    margin-top: 15px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s;
+    text-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Coffee Bag */
+.CB {
+    width: 330px;
+    height: 100px;
+    background: rgb(152, 127, 98);
+    border-radius: 20px;
+    position: absolute;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 350px;
+    z-index: 1;
+}
+
+
+.CB .bag {
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin-top: 2%;
+    margin: auto;
+    background: rgb(94, 61, 49);
+    border-radius: 20px;
+    transition: height 0.5s;
+}
+
+.CB:hover .bag {
+    height: 25%;
+}
+
+.CB:Hover .bagimage {
+    opacity: 100%;
+}
+
+.bagcontain {
+    position: relative;
+    width: 200px;
+    height: 600px;
+}
+
+.bagimage {
+    filter: blur(1px);
+    position: absolute;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-left: 8px;
+    width: 89%;
+    height: 76%;
+    opacity: 50%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 0.5s;
+}
+
+.cc {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    letter-spacing: .2em;
+    text-indent: 5px;
+    text-align: center;
+    word-wrap: break-word;
+    margin-left: 15%;
+    margin-top: 15px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s;
+    text-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* Coffee Bag */
+.FC {
+    width: 330px;
+    height: 100px;
+    background: rgb(152, 127, 98);
+    border-radius: 20px;
+    position: absolute;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 490px;
+    z-index: 1;
+}
+
+.FC .filter {
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin-top: 2%;
+    margin: auto;
+    background: rgb(94, 61, 49);
+    border-radius: 20px;
+    transition: height 0.5s;
+}
+
+.FC:hover .filter {
+    height: 25%;
+}
+
+.FC:Hover .filterimage {
+    opacity: 100%;
+}
+
+.filtercontain {
+    position: relative;
+    width: 200px;
+    height: 600px;
+}
+
+.filterimage {
+    filter: blur(1px);
+    position: absolute;
+    border-radius: 20px;
+    padding-top: 1px;
+    padding-left: 8px;
+    width: 89%;
+    height: 76%;
+    opacity: 50%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 0.5s;
+}
+
+.dd {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    letter-spacing: .2em;
+    text-indent: 5px;
+    text-align: center;
+    word-wrap: break-word;
+    margin-left: 0px;
+    margin-top: 15px;
+    margin-top: 0px;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    transition: 0.5s;
+    text-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+}
+

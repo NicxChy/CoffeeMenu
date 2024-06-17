@@ -1,0 +1,17 @@
+{
+    "name": "NicxChy",
+    "short_name": "Neon",
+    "theme_color": "#ffcbe4",
+    "background_color": "#fa99ca",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "index.html",
+    "description": "Coffee Menu",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "Images/ProfileIcon.png",
+            "sizes": "512x512"
+        }
+    ]
+}

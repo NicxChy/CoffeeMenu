@@ -3,8 +3,10 @@ function increment() {
   input.value = Number(input.value) + 1;
 }
 function decrement() {
-  const input = document.getElementById("inputQuant");
-  input.value = Number(input.value) - 1;
+  const input2 = document.getElementById("inputQuant");
+  if (Number(input2.value) > 0) {
+    input2.value = Number(input2.value) - 1;
+  }
 }
 
 function Size(Size) {
@@ -59,10 +61,14 @@ function Milk(Milk) {
     const input = document.getElementById("Milk");
     input.value = "Fertilized";
   }
-  
+
 }
 
 function showOrder() {
   var y = document.getElementById("OrderUp");
   y.style.display = "block";
+}
+function closeOrder() {
+  var y = document.getElementById("OrderUp");
+  y.style.display = "none";
 }

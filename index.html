@@ -5,29 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="./profile.js"></script>
-    <script src="./script.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)' href='css/mobilenavigation.css' />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)' href='css/mobile.css' />
+    <script src="javascript/profile.js"></script>
+    <script src="javascript/script.js"></script>
 </head>
 
 
 <body onload="getRandomImage()">
     <h1></h1>
-    <img class="profile" src="Images/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee" width="25" height="25">
-    <img class="basket" src="Images/paperbag.png" alt="Hmmmm Coffee" width="25" height="25">
+
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a> </li>
             <li><a href="menu.html">Menu</a> </li>
             <li><a href="blog.html">Blog</a> </li>
             <li><a href="about.html">About Us</a> </li>
+            <li> <img class="profile" src="Images/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee" width="25" height="25"> </li>
+            <li> <img class="basket" src="Images/paperbag.png" alt="Hmmmm Coffee" width="25" height="25"></li>
         </ul>
     </nav>
 
 
 
-
+    <!-- Login Form -->
     <main>
         <div id="showLogin" style="display:none">
             <div class="Profilecontainer">
@@ -72,7 +76,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Welcome Box-->
         <div class="box">
 
             <p class="coffee">Coffee</p>
@@ -90,7 +94,6 @@
 
             <div class="coffeeImage">
                 <img id="image_shower" alt="Hmmmm Coffee" width="450">
-
             </div>
 
         </div>
@@ -98,5 +101,15 @@
 
     </main>
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        try {
+            navigator.serviceWorker.register('sw.js');
+            console.log('SW Registered');
+        } catch (error) {
+            console.log('SW Register Failed');
+        }
+    }
+</script>
 
 </html>

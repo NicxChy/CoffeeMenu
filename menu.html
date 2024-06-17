@@ -5,23 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navigation.css">
-    <script src="./script.js"></script>
-    <script src="./profile.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel='stylesheet' media='screen and (min-width: 400px) and (max-width: 700px)' href='css/mobilenavigation.css' />
+    <link rel='stylesheet' media='screen and (min-width: 400px) and (max-width: 700px)' href='css/mobile.css' />
+    <script src="javascript/script.js"></script>
+    <script src="javascript/profile.js"></script>
 
 </head>
 
 <body>
     <h1></h1>
-    <img class="profile" src="Images/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee" width="25" height="25">
-    <img class="basket" src="Images/paperbag.png" alt="Hmmmm Coffee" width="25" height="25">
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a> </li>
             <li><a href="menu.html">Menu</a> </li>
             <li><a href="blog.html">Blog</a> </li>
-            <li><a href="order.html">About Us</a> </li>
+            <li><a href="about.html">About Us</a> </li>
+            <li> <img class="profile" src="Images/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee" width="25"
+                    height="25"> </li>
+            <li> <img class="basket" src="Images/paperbag.png" alt="Hmmmm Coffee" width="25" height="25"></li>
         </ul>
     </nav>
     <main>
@@ -70,16 +73,14 @@
         </div>
         <div>
             <div class="HF">
-                <img class="HFimage HFcontain" src="Images/HotCoffee.webp" alt="Hmmmm Coffee">
-                <p class="pp">Hot Coffee's are Hot</p>
+                    <img class="HFimage HFcontain" src="Images/HotCoffee.webp" alt="Hmmmm Coffee">
+                    <p class="pp">Hot Coffee's are Hot</p>
 
-                <a href="Coffee.html#hotCoffeeList" onclick="showHot()">
-                    <div class="se">
-                        <p class="aa">Hot Coffee</p>
-                    </div>
-                </a>
-
-
+                    <a href="Coffee.html#hotCoffeeList" onclick="showHot()">
+                        <div class="se">
+                            <p class="aa">Hot Coffee</p>
+                        </div>
+                    </a>
             </div>
 
             <div class="IC">
@@ -106,7 +107,8 @@
             </div>
 
             <div class="FC">
-                <image class="filterimage filtercontain" src="Images/CoffeeImage/Flavored/BAKED FLAVORED 6.jpg" alt="Hmmmm Coffee">
+                <image class="filterimage filtercontain" src="Images/CoffeeImage/Flavored/BAKED FLAVORED 6.jpg"
+                    alt="Hmmmm Coffee">
                     <p class="pp">Baked Goods Coffee Flavored</p>
                     <a href="Coffee.html#icedCoffeeList" onclick="showIced()">
                         <div class="filter">
