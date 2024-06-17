@@ -191,10 +191,11 @@ textarea:focus, input:focus {
 
 .orderBox {
     z-index: 1;
-    margin-left: 7%;
+    margin-left: 118px;
     position: absolute;
-    width: 1550px;
-    height: 750px;
+    margin-top: 25px;
+    width: 1575px;
+    height: 705px;
     background: linear-gradient(45deg, rgb(255, 252, 248) 0%, rgb(211, 203, 182) 100%);
     padding: 10px;
     border-radius: 50px;
@@ -203,21 +204,17 @@ textarea:focus, input:focus {
 .orderBox .OrderProduct {
     
     margin-top: 5%;
-    margin-left: 33%;
+    margin-left: 30%;
     border-radius: 20px;
 }
 
 .BorderLine{
-    margin-top: 50px;
+    margin-top: 34px;
     margin-left: 750px;
     position: absolute;
     background-color: black;
-    width: 5px;
+    width: 2px;
     height: 600px;
+    opacity: 40%;
 }
 
-.backButton{
-  position: absolute;
-  margin-top: 1%;
-  margin-left: 1%;
-}

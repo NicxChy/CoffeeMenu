@@ -76,6 +76,7 @@
 
              <!--ORDER -->
             <div id="OrderUp" class="orderBox" style="display:none">
+            
                 <div>
                     <div>
                         <img class="backButton" src="Images/Icons/BackButton.svg"  onclick="closeOrder()" alt="Hmmmm Coffee" width="50"
@@ -119,6 +120,20 @@
     
                 <div class="OrderProduct">
                     <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
+
+                    <!-- added shi -->
+                <!-- <div class="Prod-description">
+                    <h3>Product Name</h3>
+                    <p>if coffee has caffeine then cocoa has cocaine</p>
+                    <h2 class="price">Price ₱69.00</h2>
+                </div>
+                <div class="main-container">
+                    <div class="rectangle"></div>
+                    <span class="place-order">Place Order</span>
+                </div>
+            </div> -->
+
+                    
                 </div>
             </div>
             <!--ORDER END -->
