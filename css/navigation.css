@@ -33,7 +33,7 @@
   overflow: hidden;
 }
 
-.navbar a {
+.navbar .navTitles {
   color: white;
   text-decoration: none;
   padding: 15px;
@@ -41,7 +41,7 @@
   text-align: center;
 }
 
-.navbar a:hover {
+.navbar .navTitles:hover {
   background-color: rgb(110, 88, 68);
   transition: background-color 0.3s;
   transition: font-size 0.3s;
