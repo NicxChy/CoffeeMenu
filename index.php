@@ -1,6 +1,40 @@
 <?php
-session_start();
+    session_start();
+
+    include("DataBase.php");
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        try {
+            if (!empty($email) && !empty($password) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $query = "SELECT * FROM registered WHERE Email = '$email' LIMIT 1";
+                $result = mysqli_query($conn, $query);
+    
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $user_data = mysqli_fetch_assoc($result);
+    
+                    if ($user_data['Password'] == $password) {
+                        $_SESSION['user_id'] = $user_data['id']; // Save user ID in session
+                        echo "<script type='text/javascript'>alert('Login successful!'); window.location.href = 'index.php';</script>";
+                        exit();
+                    } else {
+                        echo "<script type='text/javascript'>alert('Wrong password. Please try again.');</script>";
+                    }
+                } else {
+                    echo "<script type='text/javascript'>alert('No account found with this email. Please try again.');</script>";
+                }
+            } else {
+                echo "<script type='text/javascript'>alert('Login failed! Must input valid information.');</script>";
+            }
+        } catch (mysqli_sql_exception $e) {
+            echo "<script type='text/javascript'>alert('An error occurred: " . $e->getMessage() . "');</script>";
+        }
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,18 +87,17 @@ session_start();
             <div class="Profilecontainer">
                 <div class="heading">Login</div>
                 <div class="centerText">Welcome Back! Sign in to your Account</div>
-                <form action="" class="form">
-                    <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
-                    <input required="" class="input" type="password" name="password" id="password"
-                        placeholder="Password">
+                
+                <form method="POST" class="form">
+                    <input required class="input" type="email" name="email" id="email" placeholder="E-mail">
+                    <input required class="input" type="password" name="password" id="password" placeholder="Password">
                     <input class="login-button" type="submit" value="Sign In">
-
                     <div>
                         <div class="forgot-password"><a href="#">Forgot Password ?</a></div>
-                        <div class="register"><a href="#">Register</a></div>
+                        <div class="register"><a href="Register.php">Register</a></div>
                     </div>
-
                 </form>
+
                 <div class="social-account-container">
                     <span class="title">Or Sign in with</span>
                     <div class="social-accounts">

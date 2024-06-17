@@ -1,3 +1,40 @@
+<?php
+    session_start();
+
+    include("DataBase.php");
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        try {
+            if (!empty($email) && !empty($password) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $query = "SELECT * FROM registered WHERE Email = '$email' LIMIT 1";
+                $result = mysqli_query($conn, $query);
+    
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $user_data = mysqli_fetch_assoc($result);
+    
+                    if ($user_data['Password'] == $password) {
+                        $_SESSION['user_id'] = $user_data['id']; // Save user ID in session
+                        echo "<script type='text/javascript'>alert('Login successful!'); window.location.href = 'menu.php';</script>";
+                        exit();
+                    } else {
+                        echo "<script type='text/javascript'>alert('Wrong password. Please try again.');</script>";
+                    }
+                } else {
+                    echo "<script type='text/javascript'>alert('No account found with this email. Please try again.');</script>";
+                }
+            } else {
+                echo "<script type='text/javascript'>alert('Login failed! Must input valid information.');</script>";
+            }
+        } catch (mysqli_sql_exception $e) {
+            echo "<script type='text/javascript'>alert('An error occurred: " . $e->getMessage() . "');</script>";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,18 +77,17 @@
             <div class="Profilecontainer">
                 <div class="heading">Login</div>
                 <div class="centerText">Welcome Back! Sign in to your Account</div>
-                <form action="" class="form">
-                    <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
-                    <input required="" class="input" type="password" name="password" id="password"
-                        placeholder="Password">
-                    <input class="login-button" type="submit" value="Sign In">
 
+                <form method="POST" class="form">
+                    <input required class="input" type="email" name="email" id="email" placeholder="E-mail">
+                    <input required class="input" type="password" name="password" id="password" placeholder="Password">
+                    <input class="login-button" type="submit" value="Sign In">
                     <div>
                         <div class="forgot-password"><a href="#">Forgot Password ?</a></div>
-                        <div class="register"><a href="#">Register</a></div>
+                        <div class="register"><a href="Register.php">Register</a></div>
                     </div>
-
                 </form>
+                
                 <div class="social-account-container">
                     <span class="title">Or Sign in with</span>
                     <div class="social-accounts">
@@ -84,7 +120,7 @@
                 <img class="HFimage HFcontain" src="Images/HotCoffee.webp" alt="Hmmmm Coffee">
                 <p class="pp">Hot Coffee's are Hot</p>
 
-                <a href="Coffee.html#hotCoffeeList" onclick="showHot()">
+                <a href="Coffee.php#hotCoffeeList" onclick="showHot()">
                     <div class="se">
                         <p class="aa">Hot Coffee</p>
                     </div>
@@ -95,7 +131,7 @@
                 <img class="ICimage ICcontain" src="Images/Ice Coffee.webp" alt="Hmmmm Coffee">
                 <p class="pp">Iced Coffee's are not Hot</p>
 
-                <a href="Coffee.html#icedCoffeeList" onclick="showIced()">
+                <a href="Coffee.php#icedCoffeeList" onclick="showIced()">
                     <div class="ice">
                         <p class="bb">Iced Coffee</p>
                     </div>
@@ -106,7 +142,7 @@
                 <img class="bagimage bagcontain" src="Images/CoffeeImage/Bag/COFFEE BAG 6.jpg" alt="Hmmmm Coffee">
                 <p class="pp">Can place Coffee in Bag</p>
 
-                <a href="Coffee.html#icedCoffeeList" onclick="showIced()">
+                <a href="Coffee.php#icedCoffeeList" onclick="showIced()">
                     <div class="bag">
                         <p class="cc">Coffee in Bag</p>
                     </div>
@@ -118,7 +154,7 @@
                 <image class="filterimage filtercontain" src="Images/CoffeeImage/Flavored/BAKED FLAVORED 6.jpg"
                     alt="Hmmmm Coffee">
                     <p class="pp">Baked Goods Coffee Flavored</p>
-                    <a href="Coffee.html#icedCoffeeList" onclick="showIced()">
+                    <a href="Coffee.php#icedCoffeeList" onclick="showIced()">
                         <div class="filter">
                             <p class="dd">Coffee Flavored Baked Goods</p>
                         </div>
