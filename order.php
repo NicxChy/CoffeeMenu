@@ -16,16 +16,17 @@
         <div id="OrderUp" class="orderBox" style="display:block">
             <div>
                 <div>
-                    <img class="backButton" src="Images/Icons/BackButton.svg"  onclick="closeOrder()" alt="Hmmmm Coffee" width="50"
-                        height="50" style="cursor: pointer;">
+                    <img class="backButton" src="Images/Icons/BackButton.svg" onclick="closeOrder()" alt="Hmmmm Coffee"
+                        width="50" height="50" style="cursor: pointer;">
                 </div>
-                <input id="inputQuant" class="inputQuantity" type="number" placeholder="Quantity" value="0" ></input>
+                <input id="inputQuant" class="inputQuantity" type="number" placeholder="Quantity" value="0"></input>
                 <button id="addAmount" class="addButton" onclick="increment()">+</button>
                 <button id="minusAmount" class="minusButton" onclick="decrement()">-</button>
             </div>
 
             <div class="dropdown-Milk">
-                <input id="Milk" class="dropbtn-Milk" type="text" readonly placeholder="Milk Addition" style="cursor:default"></input>
+                <input id="Milk" class="dropbtn-Milk" type="text" readonly placeholder="Milk Addition"
+                    style="cursor:default"></input>
                 <div class="dropdown-content-Milk">
                     <a onclick="Milk(1)" style="cursor: pointer;">Fresh</a>
                     <a onclick="Milk(2)" style="cursor: pointer;">Fortified</a>
@@ -34,7 +35,8 @@
             </div>
 
             <div class="dropdown-Sugar">
-                <input id="Sugar" class="dropbtn-Sugar" type="text" readonly placeholder="Sugar Level" style="cursor:default"></input>
+                <input id="Sugar" class="dropbtn-Sugar" type="text" readonly placeholder="Sugar Level"
+                    style="cursor:default"></input>
                 <div class="dropdown-content-Sugar">
                     <a onclick="Sugar(1)" style="cursor: pointer;">0%</a>
                     <a onclick="Sugar(2)" style="cursor: pointer;">25%</a>
@@ -56,8 +58,18 @@
             <div class="BorderLine"> </div>
 
             <div class="OrderProduct">
-                <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
+                <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" alt="Hmmmm Coffee" class="OrderProduct" width="400"
+                    height="400">
             </div>
+
+            <p id="orderTitle" class="ProductOrderName"></p>
+            <div class="ProductOrderDesc ellipsis">
+                <span id="orderDescription" class="ProductOrderDesc-concat">
+                
+                </span>
+            </div>
+            <button id="addCart" class="addToCart">Place Order</input>
+
         </div>
     </main>
 </body>

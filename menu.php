@@ -3,7 +3,7 @@
 
     include("DataBase.php");
 
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'GET' && !is_admin()) {
         
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -54,16 +54,14 @@
 
 <body>
 
-    <?php
-        print_r($_SESSION);
-    ?>
+   
     <h1></h1>
     <nav class="navbar">
         <ul>
             <li><a href="index.php" class="navTitles">Home</a> </li>
             <li><a href="menu.php" class="navTitles">Menu</a> </li>
             <li><a href="blog.php" class="navTitles">Blog</a> </li>
-            <li><a href="about.php" class="navTitles">About Us</a> </li>
+            <li><a href="order.php" class="navTitles">About Us</a> </li>
             <li> <img class="profile" src="Images/Icons/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee"
                     width="25" height="25"> </li>
             <li> <a href="basket.php">

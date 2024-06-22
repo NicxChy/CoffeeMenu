@@ -56,6 +56,49 @@ body {
     margin: 35px;
     border-radius: 20px;
   }
+  .inside h4{
+    font-size: large;
+    color: white;
+    padding-left: 40px;
+  }
+  .wordings{
+    position: absolute;
+    left: 10px;
+    top: 155px;
+    flex: content;
+  }
+  .inside p{
+    color:white;
+    padding-left: 40px;
+    margin-right: 54%;
+  }
+  .inside img{
+    position: absolute;
+    left: 900px;
+    top: 175px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+  }
+  .inside .social-links{
+    position: absolute;
+    left: 600px;
+    bottom: 40px;
+    font-size: 300%;
+    width: 50%;
+  }
+  .social-links a{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 64px;
+    text-align: center;
+    border-radius: 30%;
+    margin-right: 200px;
+    color: black ;
+    background-color: #5e3d31;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+  }
+
   .box .HC{
     
     cursor: pointer;
@@ -191,7 +234,8 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     text-align: center;
-    margin-top: 100%;
+    position: relative;
+    top: 51%;
     margin-left: 7%;
     margin-right: 10%;
     word-wrap: break-word;
@@ -227,7 +271,8 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     text-align: center;
-    margin-top: 100%;
+    position: relative;
+    top: 51%;
     margin-left: 7%;
     margin-right: 10%;
     word-wrap: break-word;
@@ -264,7 +309,8 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     text-align: center;
-    margin-top: 100%;
+    position: relative;
+    top: 51%;
     margin-left: 7%;
     margin-right: 10%;
     word-wrap: break-word;
@@ -301,7 +347,8 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     text-align: center;
-    margin-top: 100%;
+    position: relative;
+    top: 51%;
     margin-left: 7%;
     margin-right: 10%;
     word-wrap: break-word;
@@ -337,7 +384,8 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
     text-align: center;
-    margin-top: 100%;
+    position: relative;
+    top: 51%;
     margin-left: 7%;
     margin-right: 10%;
     word-wrap: break-word;
@@ -351,5 +399,77 @@ body {
 
 
 
+
+/* blog part page*/
+
+#blog {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.blog-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  flex-wrap: wrap;
+
+}
+
+.blog-box{
+  width: 350px;
+  background-color: wheat;
+  border: 1px solid #ececec;
+  margin: 20px;
+  margin-right: 80px;
+  margin-left: 80px;
+}
+.blog-img{
+  width: 100%;
+  height: auto;
+}
+
+.blog-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.blog-text{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.blog-text span{
+  color: #5E3D31;
+  font-size: 0.9rem;
+}
+.blog-text .blog-title{
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #272727;
+
+}
+.blog-text .blog-title:hover{
+  color: red;
+  transition: all ease 0.3s;
+}
+.blog-text p{
+  color: #9b9b9b;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 20px 0px;
+}
+.blog-text a{
+  color: black;
+}
+.blog-text a:hover{
+  color: red;
+  transition: all ease 0.3s;
+}
 
 

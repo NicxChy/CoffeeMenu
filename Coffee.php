@@ -7,7 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/navigation.css">
-    <link rel='stylesheet' media='screen and (min-width: 400px) and (max-width: 700px)' href='css/mobilenavigation.css' />
+    <link rel='stylesheet' media='screen and (min-width: 400px) and (max-width: 700px)'
+        href='css/mobilenavigation.css' />
     <link rel="stylesheet" href="css/order.css">
     <script src="javascript/script.js"></script>
     <script src="javascript/profile.js"></script>
@@ -22,8 +23,10 @@
             <li><a href="menu.php" class="navTitles">Menu</a> </li>
             <li><a href="blog.php" class="navTitles">Blog</a> </li>
             <li><a href="about.php" class="navTitles">About Us</a> </li>
-            <li> <img class="profile" src="Images/Icons/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee" width="25" height="25"> </li>
-            <li> <a href="basket.php"><img class="basket" src="Images/Icons/paperbag.png" alt="Hmmmm Coffee" width="25" height="25"></a></li>
+            <li> <img class="profile" src="Images/Icons/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee"
+                    width="25" height="25"> </li>
+            <li> <a href="basket.php"><img class="basket" src="Images/Icons/paperbag.png" alt="Hmmmm Coffee" width="25"
+                        height="25"></a></li>
         </ul>
     </nav>
 
@@ -70,33 +73,35 @@
         </div>
     </div>
 
-   
+
     <div class="container">
         <main>
 
-             <!--ORDER -->
+            <!--ORDER -->
             <div id="OrderUp" class="orderBox" style="display:none">
                 <div>
                     <div>
-                        <img class="backButton" src="Images/Icons/BackButton.svg"  onclick="closeOrder()" alt="Hmmmm Coffee" width="50"
-                            height="50" style="cursor: pointer;">
+                        <img class="backButton" src="Images/Icons/BackButton.svg" onclick="closeOrder()"
+                            alt="Hmmmm Coffee" width="50" height="50" style="cursor: pointer;">
                     </div>
                     <input id="inputQuant" class="inputQuantity" type="number" placeholder="Quantity" value="0"></input>
                     <button id="addAmount" class="addButton" onclick="increment()">+</button>
                     <button id="minusAmount" class="minusButton" onclick="decrement()">-</button>
                 </div>
-    
+
                 <div class="dropdown-Milk">
-                    <input id="Milk" class="dropbtn-Milk" type="text" readonly placeholder="Milk Addition" style="cursor:default"></input>
+                    <input id="Milk" class="dropbtn-Milk" type="text" readonly placeholder="Milk Addition"
+                        style="cursor:default"></input>
                     <div class="dropdown-content-Milk">
                         <a onclick="Milk(1)" style="cursor: pointer;">Fresh</a>
                         <a onclick="Milk(2)" style="cursor: pointer;">Fortified</a>
                         <a onclick="Milk(3)" style="cursor: pointer;">Fertilized</a>
                     </div>
                 </div>
-    
+
                 <div class="dropdown-Sugar">
-                    <input id="Sugar" class="dropbtn-Sugar" type="text" readonly placeholder="Sugar Level" style="cursor:default"></input>
+                    <input id="Sugar" class="dropbtn-Sugar" type="text" readonly placeholder="Sugar Level"
+                        style="cursor:default"></input>
                     <div class="dropdown-content-Sugar">
                         <a onclick="Sugar(1)" style="cursor: pointer;">0%</a>
                         <a onclick="Sugar(2)" style="cursor: pointer;">25%</a>
@@ -105,21 +110,31 @@
                         <a onclick="Sugar(5)" style="cursor: pointer;">100%</a>
                     </div>
                 </div>
-    
+
                 <div class="dropdown">
-                    <input id="Size" class="dropbtn" type="text" readonly placeholder="Size" style="cursor:default"></input>
+                    <input id="Size" class="dropbtn" type="text" readonly placeholder="Size"
+                        style="cursor:default"></input>
                     <div class="dropdown-content">
                         <a onclick="Size(1)" style="cursor: pointer;">Small</a>
                         <a onclick="Size(2)" style="cursor: pointer;">Medium</a>
                         <a onclick="Size(3)" style="cursor: pointer;">Large</a>
                     </div>
                 </div>
-    
+
                 <div class="BorderLine"> </div>
-    
+
                 <div class="OrderProduct">
-                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
+                    <img id="orderImage" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
                 </div>
+
+                <p id="orderTitle" class="ProductOrderName"></p>
+                <div class="ProductOrderDesc ellipsis">
+                    <span id="orderDescription" class="ProductOrderDesc-concat">
+
+                    </span>
+                </div>
+                <button id="addCart" class="addToCart">Place Order</input>
+
             </div>
             <!--ORDER END -->
 
@@ -144,45 +159,59 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" alt="Hmmmm Coffee" class="prod1" style="cursor: pointer;" onclick="showOrder()" width="400">
+                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" id="prod1" alt="Hmmmm Coffee"
+                                        class="prod1" style="cursor: pointer;"
+                                        onclick="showOrder('prod1', 'prod1name', 'prod1desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod1name"><b>Product Name </b><br><br> I think this Coffee is Kopiko and many
-                                more
-                                will come</p>
+                            <p id="prod1name" class="prod1name"><b>Kopiko </b></p>
+                            <p id="prod1desc" class="prod1name">Something 
+                            </p>
+
                         </div>
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 2.jpg" alt="Hmmmm Coffee" class="prod2" width="250">
+                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 2.jpg" id="prod2" alt="Hmmmm Coffee"
+                                        class="prod2" style="cursor: pointer;" onclick="showOrder('prod2', 'prod2name', 'prod2desc')" width="250">
                                 </div>
                             </div>
-                            <p class="prod2name"><b>Product Name </b><br><br> I think this tHE cOFfee Is A coffee</p>
+                            <p id="prod2name" class="prod2name"><b>White Krema </b></p>
+                            <p id="prod2desc" class="prod2name"> It's Creamy and it's white
+                            </p>
                         </div>
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 3.jpg" alt="Hmmmm Coffee" class="prod3" width="400">
+                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 3.jpg" id="prod3" alt="Hmmmm Coffee"
+                                        class="prod3" style="cursor: pointer;" onclick="showOrder('prod3', 'prod3name', 'prod3desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod3name"><b>Product Name </b><br><br> Might be Almond Coffee, That's a thing?
+                            <p id="prod3name" class="prod3name"><b>German Coffee </b></p>
+                            <p id="prod3desc" class="prod3name"> One good o'le whiskey 
                             </p>
                         </div>
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 4.jpg" alt="Hmmmm Coffee" class="prod4" width="400">
+                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 4.jpg" id="prod4" alt="Hmmmm Coffee"
+                                        class="prod4" style="cursor: pointer;" onclick="showOrder('prod4', 'prod4name', 'prod4desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod4name"><b>Product Name </b><br><br> That's just Art right there</p>
+                            <p id="prod4name" class="prod4name"><b>Hot Fudge</b></p>
+                            <p id="prod4desc" class="prod4name"> It melts like Chocolate
+                            </p>
                         </div>
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 5.jpg" alt="Hmmmm Coffee" class="prod5" width="355">
+                                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 5.jpg" id="prod5" alt="Hmmmm Coffee"
+                                        class="prod5" style="cursor: pointer;" onclick="showOrder('prod5', 'prod5name', 'prod5desc')" width="355">
                                 </div>
                             </div>
-                            <p class="prod5name"><b>Product Name </b><br><br> Creamy, no no not that kind of Cream</p>
+                            <p id="prod5name" class="prod5name"><b>Dark Beans </b></p>
+                            <p id="prod5desc" class="prod5name"> The Darker you get
+                            </p>
                         </div>
                     </div>
 
@@ -191,7 +220,8 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 1.jpg" alt="Hmmmm Coffee" class="prod1" width="250">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 1.jpg" alt="Hmmmm Coffee"
+                                        class="prod1" width="250">
                                 </div>
                             </div>
                             <p class="prod1name"><b>Product Name </b><br><br> Very Cold</p>
@@ -199,7 +229,8 @@
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 2.jpeg" alt="Hmmmm Coffee" class="prod2" width="250">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 2.jpeg" alt="Hmmmm Coffee"
+                                        class="prod2" width="250">
                                 </div>
                             </div>
                             <p class="prod2name"><b>Product Name </b><br><br> IT'S OUT OF THE SCREEN</p>
@@ -207,7 +238,8 @@
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 3.jpeg" alt="Hmmmm Coffee" class="prod3" width="235">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 3.jpeg" alt="Hmmmm Coffee"
+                                        class="prod3" width="235">
                                 </div>
                             </div>
                             <p class="prod3name"><b>Product Name </b><br><br> Looks like a cocktail</p>
@@ -215,7 +247,8 @@
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 4.jpeg" alt="Hmmmm Coffee" class="prod4" width="320">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 4.jpeg" alt="Hmmmm Coffee"
+                                        class="prod4" width="320">
                                 </div>
                             </div>
                             <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
@@ -223,7 +256,8 @@
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 5.jpeg" alt="Hmmmm Coffee" class="prod5" width="235">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 5.jpeg" alt="Hmmmm Coffee"
+                                        class="prod5" width="235">
                                 </div>
                             </div>
                             <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>
@@ -235,7 +269,8 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 1.jpg" alt="Hmmmm Coffee" class="prod1" width="250">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 1.jpg" alt="Hmmmm Coffee" class="prod1"
+                                        width="250">
                                 </div>
                             </div>
                             <p class="prod1name"><b>Product Name </b><br><br> Xbox live</p>
@@ -243,7 +278,8 @@
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 2.jpg" alt="Hmmmm Coffee" class="prod2" width="350">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 2.jpg" alt="Hmmmm Coffee" class="prod2"
+                                        width="350">
                                 </div>
                             </div>
                             <p class="prod2name"><b>Product Name </b><br><br> Grenade in the Gravy</p>
@@ -251,7 +287,8 @@
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 3.jpg" alt="Hmmmm Coffee" class="prod3" width="255">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 3.jpg" alt="Hmmmm Coffee" class="prod3"
+                                        width="255">
                                 </div>
                             </div>
                             <p class="prod3name"><b>Product Name </b><br><br> Napalm in the Nachos</p>
@@ -259,7 +296,8 @@
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 4.jpg" alt="Hmmmm Coffee" class="prod4" width="350">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 4.jpg" alt="Hmmmm Coffee" class="prod4"
+                                        width="350">
                                 </div>
                             </div>
                             <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
@@ -267,7 +305,8 @@
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 5.JPG" alt="Hmmmm Coffee" class="prod5" width="235">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 5.JPG" alt="Hmmmm Coffee" class="prod5"
+                                        width="235">
                                 </div>
                             </div>
                             <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>
@@ -279,7 +318,8 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 1.jpg" alt="Hmmmm Coffee" class="prod1" width="250">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 1.jpg" alt="Hmmmm Coffee"
+                                        class="prod1" width="250">
                                 </div>
                             </div>
                             <p class="prod1name"><b>Product Name </b><br><br> There's a gun in the grits</p>
@@ -287,7 +327,8 @@
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 2.jpg" alt="Hmmmm Coffee" class="prod2" width="350">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 2.jpg" alt="Hmmmm Coffee"
+                                        class="prod2" width="350">
                                 </div>
                             </div>
                             <p class="prod2name"><b>Product Name </b><br><br> Explosives in the eggs</p>
@@ -295,7 +336,8 @@
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 3.jpg" alt="Hmmmm Coffee" class="prod3" width="235">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 3.jpg" alt="Hmmmm Coffee"
+                                        class="prod3" width="235">
                                 </div>
                             </div>
                             <p class="prod3name"><b>Product Name </b><br><br> Jizzin' in the jelly</p>
@@ -303,7 +345,8 @@
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 4.jpg" alt="Hmmmm Coffee" class="prod4" width="300">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 4.jpg" alt="Hmmmm Coffee"
+                                        class="prod4" width="300">
                                 </div>
                             </div>
                             <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
@@ -311,7 +354,8 @@
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 5.jpg" alt="Hmmmm Coffee" class="prod5" width="235">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 5.jpg" alt="Hmmmm Coffee"
+                                        class="prod5" width="235">
                                 </div>
                             </div>
                             <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>

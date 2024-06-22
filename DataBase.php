@@ -5,7 +5,7 @@
     $dbName = "lecoffee";
 
     try {
-        $conn = new MySqli($servername, $userName, $password, $dbName);
+         $conn = new MySqli($servername, $userName, $password, $dbName);
     }
     Catch(Exception $e) 
     {
@@ -13,4 +13,3 @@
         exit();
     }    
 ?>
-

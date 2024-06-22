@@ -3,7 +3,7 @@ session_start();
 
 include("DataBase.php");
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'GET' && !is_admin()) {
     $firstname = $_POST['fname'];
     $middlename = $_POST['mname'];
     $lastname = $_POST['lname'];
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $result = mysqli_query($conn, $query);
 
             if ($result) {
-                echo "<script type='text/javascript'>alert('Successfully registered!'); window.location.href = 'index.html';</script>";
+                echo "<script type='text/javascript'>alert('Successfully registered!'); window.location.href = 'index.php';</script>";
             } else {
                 echo "<script type='text/javascript'>alert('Registration failed. Please try again.')</script>";
             }

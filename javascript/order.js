@@ -1,3 +1,5 @@
+
+
 function increment() {
   const input = document.getElementById("inputQuant");
   input.value = Number(input.value) + 1;
@@ -64,10 +66,25 @@ function Milk(Milk) {
 
 }
 
-function showOrder() {
+
+function showOrder(product, name, desc) {
+  //Display Order System
   var y = document.getElementById("OrderUp");
   y.style.display = "block";
+  //For Image
+  var x = document.getElementById(product);
+  document.getElementById("orderImage").src = x.src;
+  //For Title and Description
+
+  var Title = document.getElementById(name).innerHTML;
+  var Description = document.getElementById(desc).innerHTML;
+
+  document.getElementById("orderTitle").innerHTML = Title;
+  document.getElementById("orderDescription").innerHTML = Description;
 }
+
+
+
 function closeOrder() {
   var y = document.getElementById("OrderUp");
   y.style.display = "none";

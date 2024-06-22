@@ -3,7 +3,7 @@
 
     include("DataBase.php");
 
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'GET' && !is_admin()) {
         
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -55,11 +55,6 @@
 
 <body onload="getRandomImage()">
 
-    <?php
-        $_SESSION ["favcolor"] = "green";
-        $_SESSION ["favanimal"] = "cat";
-        echo "Session variables are set.";
-    ?>
     
     <h1></h1>
 
@@ -72,7 +67,7 @@
             <li> <img class="profile" src="Images/Icons/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee"
                     width="25" height="25"> </li>
             <li>
-                <a href="basket.html">
+                <a href="basket.php">
                     <img class="basket" src="Images/Icons/paperbag.png" alt="Hmmmm Coffee" width="25" height="25">
                 </a>
             </li>
