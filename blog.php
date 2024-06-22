@@ -22,7 +22,6 @@
     <main>
         <div class="box">
             <div class="inside">
-                
             </div>
             <section id="blog">
                 <div class="blog-heading">
@@ -33,7 +32,9 @@
                 <div class="blog-container">
                     <div class="blog-box">
                         <div class="blog-img">
+
                             <img src="Images/CoffeeImage/Blog/Blog1.jpg" alt="Blog">
+                            <img src="c:\Users\Lenovo\Downloads\For the Coffe Menu App\exps181827_CC153599B04_24_6b.jpg" alt="Blog">
                         </div>
                         
                         <div class="blog-text">
@@ -47,6 +48,8 @@
                     <div class="blog-box">
                         <div class="blog-img">
                             <img src="Images/CoffeeImage/Blog/Blog2.jpg" alt="Blog">
+                            <img src="c:\Users\Lenovo\Downloads\For the Coffe Menu App\Crispy-Coffee-Cookies_EXPS_HCBZ21_16080_B06_08_10b-13.jpg" alt="Blog">
+
                         </div>
                         
                         <div class="blog-text">
@@ -59,7 +62,7 @@
 
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img src="Images/CoffeeImage/Blog/Blog3.jpg" alt="Blog">
+                            <img src="c:\Users\Lenovo\Downloads\For the Coffe Menu App\Tiramisu-Cookies_EXPS_FT19_246259_F_1101_1-3.jpg" alt="Blog">
                         </div>
                         
                         <div class="blog-text">

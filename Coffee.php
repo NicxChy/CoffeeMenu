@@ -79,6 +79,7 @@
 
             <!--ORDER -->
             <div id="OrderUp" class="orderBox" style="display:none">
+            
                 <div>
                     <div>
                         <img class="backButton" src="Images/Icons/BackButton.svg" onclick="closeOrder()"
@@ -125,6 +126,8 @@
 
                 <div class="OrderProduct">
                     <img id="orderImage" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
+                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
+
                 </div>
 
                 <p id="orderTitle" class="ProductOrderName"></p>

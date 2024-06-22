@@ -22,8 +22,7 @@
                 <input id="inputQuant" class="inputQuantity" type="number" placeholder="Quantity" value="0"></input>
                 <button id="addAmount" class="addButton" onclick="increment()">+</button>
                 <button id="minusAmount" class="minusButton" onclick="decrement()">-</button>
-            </div>
-
+                
             <div class="dropdown-Milk">
                 <input id="Milk" class="dropbtn-Milk" type="text" readonly placeholder="Milk Addition"
                     style="cursor:default"></input>
