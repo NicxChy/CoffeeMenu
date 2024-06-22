@@ -126,7 +126,7 @@
 
                 <div class="OrderProduct">
                     <img id="orderImage" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
-                    <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
+
 
                 </div>
 

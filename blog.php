@@ -62,7 +62,7 @@
 
                     <div class="blog-box">
                         <div class="blog-img">
-                            <img src="c:\Users\Lenovo\Downloads\For the Coffe Menu App\Tiramisu-Cookies_EXPS_FT19_246259_F_1101_1-3.jpg" alt="Blog">
+                            <img src="Images/CoffeeImage/Blog/Blog3.jpg" alt="Blog">
                         </div>
                         
                         <div class="blog-text">
