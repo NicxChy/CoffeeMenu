@@ -41,7 +41,7 @@
                             <span>Da Real / Coffee Masarap kahit walang sauce</span>
                             <a href="#" class="blog-title">White Chocolate-Cappuccino Cookies</a>
                             <p>From following your footprints in the sand To walking with you on this island Guided by the grip of your hand I can feel you're holding my world</p>
-                            <a href="https://www.tasteofhome.com/recipes/white-chocolate-cappuccino-cookies/">Read More</a>
+                            <a href="https://www.tasteofhome.com/recipes/white-chocolate-cappuccino-cookies/" target="_blank">Read More</a>
                         </div>
                     </div>
 
@@ -56,7 +56,7 @@
                             <span>Da Real / Coffee Masarap kahit walang sauce</span>
                             <a href="#" class="blog-title">Crispy Coffee Cookies</a>
                             <p>From following your footprints in the sand To walking with you on this island Guided by the grip of your hand I can feel you're holding my world</p>
-                            <a href="https://www.tasteofhome.com/recipes/crispy-coffee-cookies/">Read More</a>
+                            <a href="https://www.tasteofhome.com/recipes/crispy-coffee-cookies/" target="_blank">Read More</a>
                         </div>
                     </div>
 
@@ -69,7 +69,7 @@
                             <span>This coffee / Kopiko Kopimo</span>
                             <a href="#" class="blog-title">This part is part of me and you okay?</a>
                             <p>From following your footprints in the sand To walking with you on this island Guided by the grip of your hand I can feel you're holding my world</p>
-                            <a href="https://www.tasteofhome.com/recipes/tiramisu-cookies/">Read More</a>
+                            <a href="https://www.tasteofhome.com/recipes/tiramisu-cookies/" target="_blank">Read More</a>
                         </div>
                     </div>
                 </div>

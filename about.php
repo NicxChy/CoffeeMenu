@@ -30,13 +30,26 @@
                     <h4>WHERE WE COME</h4>
                     <p>Our journey began in a small coffee shop where a group of friends bonded over their shared passion for coffee. Realizing the need for a platform that could help coffee lovers navigate the vast world of coffee, we decided to create an app that does just that. With backgrounds in technology, design, and of course, coffee, we combined our expertise to develop a user-friendly app that celebrates the diversity and richness of coffee culture. Today, we are proud to offer a tool that helps coffee enthusiasts everywhere discover new flavors and enjoy their favorite drink in new and exciting ways.</p>
                 </div>
-                <div class="flex">
-                    <img src="https://i.pinimg.com/736x/18/c2/ac/18c2ac1019821ca78497779400fe017e.jpg" alt="coffee is life">
+                <div class="cardcontainer"> 
+                    <div class="card">  
+                        <div class="front"> 
+                            <img src="https://i.pinimg.com/736x/18/c2/ac/18c2ac1019821ca78497779400fe017e.jpg" alt="coffee is life">
+                        </div>  
+                            <div class="back">
+                                <h3 class="backwords">ADDITIONAL INFORMATION</h3>
+                                <h2>Address:</h2>
+                                <p>THEE, MA BIROUCAN ST.</p>
+                                <h2>Contact #:</h2>
+                                <p>8-7000</p>
+                                <h2>Our Motto:</h2>
+                                <p>“Three cups of coffee a day keeps the doctor away!”</p>
+                            </div>   
+                    </div>
                 </div>
                 <div class="social-links">
-                    <a href="https://guthib.com/"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/porsche?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-telegram"></i></a>
+                    <a href="https://guthib.com/"><i class="fab fa-facebook-f" target="_blank"></i></a>
+                    <a href="https://www.instagram.com/porsche?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@_notmaumauleon/photo/7374481672529644805?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-telegram"></i></a>
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ session_start();
 
 include("DataBase.php");
 
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
+if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'GET' && !is_admin()) {
     $firstname = $_POST['fname'];
     $middlename = $_POST['mname'];
     $lastname = $_POST['lname'];

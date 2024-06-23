@@ -50,9 +50,10 @@ body {
     width: 1750px;
     height: 750px;
     background-color: rgb(152,127,98);
-    padding: 10px;
+    padding: 20px;
     margin: 35px;
     border-radius: 20px;
+    padding-left: 40px;
   }
   .box .HC{
     
@@ -388,7 +389,7 @@ body {
 .blog-box{
   width: 350px;
   background-color: wheat;
-  border: 1px solid #ececec;
+  border: 1px solid #5e3d31;
   margin: 20px;
   margin-right: 80px;
   margin-left: 80px;
@@ -412,6 +413,7 @@ body {
 .blog-text span{
   color: #5E3D31;
   font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 .blog-text .blog-title{
   font-size: 1.3rem;
@@ -443,7 +445,7 @@ body {
 
 .inside h4{
   font-size: large;
-  color: white;
+  color: #5e3d31;
   padding-left: 40px;
 }
 .wordings{
@@ -457,18 +459,20 @@ body {
   padding-left: 40px;
   margin-right: 54%;
 }
-.inside img{
+/* .inside img{
   position: absolute;
-  left: 900px;
-  top: 175px;
+  left: 980px;
+  top: 100px;
+  backface-visibility: hidden;
   box-shadow: 0 3px 5px rgba(0,0,0,0.3);
-}
+} */
 .inside .social-links{
   position: absolute;
-  left: 600px;
-  bottom: 40px;
+  left: 610px;
+  bottom: 60px;
   font-size: 300%;
   width: 50%;
+  
 }
 .social-links a{
   display: inline-block;
@@ -478,12 +482,56 @@ body {
   text-align: center;
   border-radius: 30%;
   margin-right: 200px;
-  color: black ;
-  background-color: #5e3d31;
+  color: #5e3d31 ;
+  background-color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   transition: all 0.4s ease;
 }
 
 #showLogin {
   display: none;
+}
+
+
+/* flipcard info */
+.cardcontainer{
+  position: relative;
+  top: 90px;
+  width: 730px;
+  height: 400px;
+}
+.card{
+  position: absolute;
+  left: 980px;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+.card:hover{
+  transform: rotateY(180deg);
+}
+.front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+/* .front .img{
+  position: absolute;
+  left: 1020px;
+  top: 100px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+} */
+.back{
+  position: absolute;
+  width: 732px;
+  height: 415px;
+  backface-visibility: hidden;
+  background: #5e3d31;
+  color: #987f62;
+  transform: rotateY(180deg);
+}
+.backwords{
+  padding-left: 230px;
 }

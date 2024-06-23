@@ -3,7 +3,7 @@
 
     include("DataBase.php");
 
-    if($_SERVER['REQUEST_METHOD'] == "POST") {
+    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'GET' && !is_admin()){
         
         $email = $_POST['email'];
         $password = $_POST['password'];

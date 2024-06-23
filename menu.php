@@ -3,7 +3,7 @@
 
     include("DataBase.php");
 
-    if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'GET' && !is_admin()){
         
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -135,7 +135,7 @@
         <div>
             <div class="HF">
                 <img class="HFimage HFcontain" src="Images/HotCoffee.webp" alt="Hmmmm Coffee">
-                <p class="pp">Hot Coffee's are Hot</p>
+                <p class="pp">Rich, Aromatic Hot Coffee</p>
 
                 <a href="Coffee.php?CoffeeBack=HotPage">
                     <div class="se">
@@ -146,22 +146,22 @@
 
             <div class="IC">
                 <img class="ICimage ICcontain" src="Images/Ice Coffee.webp" alt="Hmmmm Coffee">
-                <p class="pp">Iced Coffee's are not Hot</p>
+                <p class="pp">Cool, Refreshing Iced Coffee</p>
 
                 <a href="Coffee.php?CoffeeBack=IcePage">
                     <div class="ice">
-                        <p class="bb">Iced Coffee</p>
+                        <p class="bb">Iced/Cold Coffee</p>
                     </div>
                 </a>
             </div>
 
             <div class="CB">
                 <img class="bagimage bagcontain" src="Images/CoffeeImage/Bag/COFFEE BAG 6.jpg" alt="Hmmmm Coffee">
-                <p class="pp">Can place Coffee in Bag</p>
+                <p class="pp">Premium, Freshly Sealed Coffee</p>
 
                 <a href="Coffee.php?CoffeeBack=BagPage">
                     <div class="bag">
-                        <p class="cc">Coffee in Bag</p>
+                        <p class="cc">Bagged Coffee</p>
                     </div>
                 </a>
 
@@ -170,10 +170,10 @@
             <div class="FC">
                 <image class="filterimage filtercontain" src="Images/CoffeeImage/Flavored/BAKED FLAVORED 6.jpg"
                     alt="Hmmmm Coffee">
-                    <p class="pp">Baked Goods Coffee Flavored</p>
+                    <p class="pp">Delicious Coffee-Infused Delights</p>
                     <a href="Coffee.php?CoffeeBack=BakedPage" onclick="showIced()">
                         <div class="filter">
-                            <p class="dd">Coffee Flavored Baked Goods</p>
+                            <p class="dd">Coffee Snacks</p>
                         </div>
                     </a>
             </div>
