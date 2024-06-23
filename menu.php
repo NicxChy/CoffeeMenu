@@ -3,7 +3,7 @@
 
     include("DataBase.php");
 
-    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'GET' && !is_admin()) {
+    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'POST' && !is_admin()){
         
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -49,6 +49,7 @@
     <link rel='stylesheet' media='screen and (min-width: 400px) and (max-width: 700px)' href='css/mobile.css' />
     <script src="javascript/script.js"></script>
     <script src="javascript/profile.js"></script>
+    
 
 </head>
 
@@ -64,8 +65,8 @@
             <li><a href="order.php" class="navTitles">About Us</a> </li>
             <li> <img class="profile" src="Images/Icons/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee"
                     width="25" height="25"> </li>
-            <li> <a href="basket.php">
-                    <img class="basket" src="Images/Icons/paperbag.png" alt="Hmmmm Coffee" width="25" height="25">
+            <li> <a href="basket.php?MenuBack=menuPage">
+                    <img class="basket" src="Images/Icons/paperbag.png"   alt="Hmmmm Coffee" width="25" height="25">
                 </a>
             </li>
         </ul>
@@ -118,7 +119,7 @@
                 <img class="HFimage HFcontain" src="Images/HotCoffee.webp" alt="Hmmmm Coffee">
                 <p class="pp">Hot Coffee's are Hot</p>
 
-                <a href="Coffee.php#hotCoffeeList" onclick="showHot()">
+                <a href="Coffee.php?CoffeeBack=HotPage">
                     <div class="se">
                         <p class="aa">Hot Coffee</p>
                     </div>
@@ -129,7 +130,7 @@
                 <img class="ICimage ICcontain" src="Images/Ice Coffee.webp" alt="Hmmmm Coffee">
                 <p class="pp">Iced Coffee's are not Hot</p>
 
-                <a href="Coffee.php#icedCoffeeList" onclick="showIced()">
+                <a href="Coffee.php?CoffeeBack=IcePage">
                     <div class="ice">
                         <p class="bb">Iced Coffee</p>
                     </div>
@@ -140,7 +141,7 @@
                 <img class="bagimage bagcontain" src="Images/CoffeeImage/Bag/COFFEE BAG 6.jpg" alt="Hmmmm Coffee">
                 <p class="pp">Can place Coffee in Bag</p>
 
-                <a href="Coffee.php#icedCoffeeList" onclick="showIced()">
+                <a href="Coffee.php?CoffeeBack=BagPage">
                     <div class="bag">
                         <p class="cc">Coffee in Bag</p>
                     </div>
@@ -152,7 +153,7 @@
                 <image class="filterimage filtercontain" src="Images/CoffeeImage/Flavored/BAKED FLAVORED 6.jpg"
                     alt="Hmmmm Coffee">
                     <p class="pp">Baked Goods Coffee Flavored</p>
-                    <a href="Coffee.php#icedCoffeeList" onclick="showIced()">
+                    <a href="Coffee.php?CoffeeBack=BakedPage" onclick="showIced()">
                         <div class="filter">
                             <p class="dd">Coffee Flavored Baked Goods</p>
                         </div>

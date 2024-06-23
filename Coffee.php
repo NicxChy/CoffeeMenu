@@ -10,13 +10,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/navigation.css">
-    <link rel='stylesheet' media='screen and (min-width: 400px) and (max-width: 700px)'
-        href='css/mobilenavigation.css' />
+    <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)' href='css/mobilenavigation.css' />
     <link rel="stylesheet" href="css/order.css">
+    <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)' href='css/mobile.css' />
+    
     <script src="javascript/script.js"></script>
     <script src="javascript/profile.js"></script>
     <script src="javascript/order.js"></script>
+
 </head>
+
+
+<script>
+    window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('CoffeeBack') === 'HotPage') {
+            showHot();
+        } else if (params.get('CoffeeBack') === 'IcePage'){
+            showIced();
+        } else if (params.get('CoffeeBack') === 'BagPage'){
+            showCB();
+        } else if (params.get('CoffeeBack') === 'BakedPage'){
+            showBaked();
+        } 
+    };
+</script>
+
 
 <body>
     <h1></h1>
@@ -28,7 +47,7 @@
             <li><a href="about.php" class="navTitles">About Us</a> </li>
             <li> <img class="profile" src="Images/Icons/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee"
                     width="25" height="25"> </li>
-            <li> <a href="basket.php"><img class="basket" src="Images/Icons/paperbag.png" alt="Hmmmm Coffee" width="25"
+            <li> <a href="basket.php?MenuBack=coffeePage"><img class="basket" src="Images/Icons/paperbag.png" alt="Hmmmm Coffee" width="25"
                         height="25"></a></li>
         </ul>
     </nav>
@@ -82,7 +101,7 @@
 
             <!--ORDER -->
             <div id="OrderUp" class="orderBox" style="display:none">
-            
+
                 <div>
                     <div>
                         <img class="backButton" src="Images/Icons/BackButton.svg" onclick="closeOrder()"
@@ -129,17 +148,20 @@
 
                 <div class="OrderProduct">
                     <img id="orderImage" alt="Hmmmm Coffee" class="OrderProduct" width="450" height="400">
-
-
                 </div>
-
-                <p id="orderTitle" class="ProductOrderName"></p>
+                <div><p id="orderTitle" class="ProductOrderName"></p></div>
+                
+                <div><p id="OrderPrice" class="ProductOrderPrice">50 Pesos</p></div>
+                
                 <div class="ProductOrderDesc ellipsis">
                     <span id="orderDescription" class="ProductOrderDesc-concat">
                     </span>
                 </div>
-                <button id="addCart" class="addToCart" onclick="ToCart()">Place Order</input>
+                
+                <button id="addCart" class="addToCart" onclick="moveOrder()">Place Order</input>
 
+
+                
             </div>
             <!--ORDER END -->
 
@@ -165,55 +187,72 @@
                             <div class="boxprod1">
                                 <div class="prod1">
                                     <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" id="prod1" alt="Hmmmm Coffee"
-                                        class="prod1" style="cursor: pointer;" onclick="showOrder('prod1', 'prod1name', 'prod1desc')" width="400">
+                                        class="prod1" style="cursor: pointer;"
+                                        onclick="showOrder('prod1', 'prod1name', 'prod1desc', 'prod1price')" width="400">
                                 </div>
                             </div>
                             <p id="prod1name" class="prod1name"><b>Espresso </b></p>
-                            <p id="prod1desc" class="prod1name">A strong and concentrated coffee made by forcing hot water through finely-ground coffee beans.
+                            <p id="prod1price" class="prod1price">Price: ₱50</p>
+                            <p id="prod1desc" class="prod1name">A strong and concentrated coffee made by forcing hot
+                                water through finely-ground coffee beans.
                             </p>
+                            
                         </div>
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
                                     <img src="Images/CoffeeImage/Hot/HOT COFFEE 2.jpg" id="prod2" alt="Hmmmm Coffee"
-                                        class="prod2" style="cursor: pointer;" onclick="showOrder('prod2', 'prod2name', 'prod2desc')" width="250">
+                                        class="prod2" style="cursor: pointer;"
+                                        onclick="showOrder('prod2', 'prod2name', 'prod2desc', 'prod2price')" width="250">
                                 </div>
                             </div>
                             <p id="prod2name" class="prod2name"><b>French Vanilla Cappucino </b></p>
-                            <p id="prod2desc" class="prod2name"> Espresso combined with steamed milk, foam, and French vanilla flavoring
+                            <p id="prod2price" class="prod1price">Price: ₱69</p>
+                            <p id="prod2desc" class="prod2name"> Espresso combined with steamed milk, foam, and French
+                                vanilla flavoring
                             </p>
                         </div>
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
                                     <img src="Images/CoffeeImage/Hot/HOT COFFEE 3.jpg" id="prod3" alt="Hmmmm Coffee"
-                                        class="prod3" style="cursor: pointer;" onclick="showOrder('prod3', 'prod3name', 'prod3desc')" width="400">
+                                        class="prod3" style="cursor: pointer;"
+                                        onclick="showOrder('prod3', 'prod3name', 'prod3desc', 'prod3price')" width="400">
                                 </div>
                             </div>
                             <p id="prod3name" class="prod3name"><b>Americano </b></p>
-                            <p id="prod3desc" class="prod3name"> Espresso diluted with hot water, creating a coffee similar in strength to drip coffee.
+                            <p id="prod3price" class="prod1price">Price: ₱91</p>
+                            <p id="prod3desc" class="prod3name"> Espresso diluted with hot water, creating a coffee
+                                similar in strength to drip coffee.
                             </p>
                         </div>
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
                                     <img src="Images/CoffeeImage/Hot/HOT COFFEE 4.jpg" id="prod4" alt="Hmmmm Coffee"
-                                        class="prod4" style="cursor: pointer;" onclick="showOrder('prod4', 'prod4name', 'prod4desc')" width="400">
+                                        class="prod4" style="cursor: pointer;"
+                                        onclick="showOrder('prod4', 'prod4name', 'prod4desc', 'prod4price')" width="400">
                                 </div>
                             </div>
-                            <p id="prod4name" class="prod4name"><b>Coffee with Tablea (tablet chocoalate made with cacao beans)</b></p>
-                            <p id="prod4desc" class="prod4name"> Traditional Filipino-style coffee made with tablea, which are cocoa tablets dissolved in hot water or milk.
+                            <p id="prod4name" class="prod4name"><b>Coffee with Tablea (tablet chocoalate made with cacao
+                                    beans)</b></p>
+                                    <p id="prod4price" class="prod1price">Price: ₱100</p>
+                            <p id="prod4desc" class="prod4name"> Traditional Filipino-style coffee made with tablea,
+                                which are cocoa tablets dissolved in hot water or milk.
                             </p>
                         </div>
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
                                     <img src="Images/CoffeeImage/Hot/HOT COFFEE 5.jpg" id="prod5" alt="Hmmmm Coffee"
-                                        class="prod5" style="cursor: pointer;" onclick="showOrder('prod5', 'prod5name', 'prod5desc')" width="355">
+                                        class="prod5" style="cursor: pointer;"
+                                        onclick="showOrder('prod5', 'prod5name', 'prod5desc', 'prod5price')" width="355">
                                 </div>
                             </div>
                             <p id="prod5name" class="prod5name"><b>Black Coffee </b></p>
-                            <p id="prod5desc" class="prod5name"> Straightforward coffee made from ground coffee beans and hot water, without milk or sugar.
+                            <p id="prod5price" class="prod1price">Price: ₱70</p>
+                            <p id="prod5desc" class="prod5name"> Straightforward coffee made from ground coffee beans
+                                and hot water, without milk or sugar.
                             </p>
                         </div>
                     </div>
@@ -223,56 +262,69 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 1.jpg" id="Iceprod1" alt="Hmmmm Coffee"
-                                        class="prod1" style="cursor: pointer;" onclick="showOrder('Iceprod1', 'Iceprod1name', 'Iceprod1desc')" width="400">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 1.jpg" id="Iceprod1"
+                                        alt="Hmmmm Coffee" class="prod1" style="cursor: pointer;"
+                                        onclick="showOrder('Iceprod1', 'Iceprod1name', 'Iceprod1desc', 'Iceprod1price')" width="400">
                                 </div>
                             </div>
                             <p id="Iceprod1name" class="prod1name"><b>Caramel Cold Brew Latte </b></p>
-                            <p id="Iceprod1desc" class="prod1name">Cold brew coffee with milk, flavored with caramel syrup for a sweet taste.
+                            <p id="Iceprod1price" class="prod1price">Price: ₱99</p>
+                            <p id="Iceprod1desc" class="prod1name">Cold brew coffee with milk, flavored with caramel
+                                syrup for a sweet taste.
                             </p>
                         </div>
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 2.jpeg" id="Iceprod2" alt="Hmmmm Coffee"
-                                        class="prod2" style="cursor: pointer;" onclick="showOrder('Iceprod2', 'Iceprod2name', 'Iceprod2desc')" width="250">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 2.jpeg" id="Iceprod2"
+                                        alt="Hmmmm Coffee" class="prod2" style="cursor: pointer;"
+                                        onclick="showOrder('Iceprod2', 'Iceprod2name', 'Iceprod2desc', 'Iceprod2price')" width="250">
                                 </div>
                             </div>
                             <p id="Iceprod2name" class="prod2name"><b>Classic Cold Brew </b></p>
-                            <p id="Iceprod2desc" class="prod2name">Coffee brewed with cold water over an extended period, resulting in a smooth and less acidic flavor.
+                            <p id="Iceprod2price" class="prod1price">Price: ₱89</p>
+                            <p id="Iceprod2desc" class="prod2name">Coffee brewed with cold water over an extended
+                                period, resulting in a smooth and less acidic flavor.
                             </p>
                         </div>
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 3.jpeg" id="Iceprod3" alt="Hmmmm Coffee"
-                                        class="prod3" style="cursor: pointer;" onclick="showOrder('Iceprod3', 'Iceprod3name', 'Iceprod3desc')" width="250">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 3.jpeg" id="Iceprod3"
+                                        alt="Hmmmm Coffee" class="prod3" style="cursor: pointer;"
+                                        onclick="showOrder('Iceprod3', 'Iceprod3name', 'Iceprod3desc', 'Iceprod3price')" width="250">
                                 </div>
                             </div>
                             <p id="Iceprod3name" class="prod3name"><b>Iced Caffe Latte </b></p>
+                            <p id="Iceprod3price" class="prod1price">Price: ₱399</p>
                             <p id="Iceprod3desc" class="prod3name">Cold espresso with chilled milk and often sweetened.
                             </p>
                         </div>
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 4.jpeg" id="Iceprod4" alt="Hmmmm Coffee"
-                                        class="prod4" style="cursor: pointer;" onclick="showOrder('Iceprod4', 'Iceprod4name', 'Iceprod4desc')" width="250">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 4.jpeg" id="Iceprod4"
+                                        alt="Hmmmm Coffee" class="prod4" style="cursor: pointer;"
+                                        onclick="showOrder('Iceprod4', 'Iceprod4name', 'Iceprod4desc', 'Iceprod4price')" width="250">
                                 </div>
                             </div>
                             <p id="Iceprod4name" class="prod4name"><b>Iced Classic with Fresh milk </b></p>
+                            <p id="Iceprod4price" class="prod1price">Price: ₱199</p>
                             <p id="Iceprod4desc" class="prod4name">Cold brewed coffee served over ice with fresh milk.
                             </p>
                         </div>
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 5.jpeg" id="Iceprod5" alt="Hmmmm Coffee"
-                                        class="prod5" style="cursor: pointer;" onclick="showOrder('Iceprod5', 'Iceprod5name', 'Iceprod5desc')" width="250">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 5.jpeg" id="Iceprod5"
+                                        alt="Hmmmm Coffee" class="prod5" style="cursor: pointer;"
+                                        onclick="showOrder('Iceprod5', 'Iceprod5name', 'Iceprod5desc', 'Iceprod5price')" width="250">
                                 </div>
                             </div>
-                            <p id="Iceprod5name" class="prod5name"><b>Dalgona  </b></p>
-                            <p id="Iceprod5desc" class="prod5name">A frothy whipped coffee made by whipping equal parts of instant coffee, sugar, and hot water until fluffy, then served over cold milk.
+                            <p id="Iceprod5name" class="prod5name"><b>Dalgona </b></p>
+                            <p id="Iceprod5price" class="prod1price">Price: ₱79</p>
+                            <p id="Iceprod5desc" class="prod5name">A frothy whipped coffee made by whipping equal parts
+                                of instant coffee, sugar, and hot water until fluffy, then served over cold milk.
                             </p>
                         </div>
                     </div>
@@ -283,10 +335,12 @@
                             <div class="boxprod1">
                                 <div class="prod1">
                                     <img src="Images/CoffeeImage/Bag/COFFEE BAG 1.jpg" id="Bagprod1" alt="Hmmmm Coffee"
-                                        class="prod1" style="cursor: pointer;" onclick="showOrder('Bagprod1', 'Bagprod1name', 'Bagprod1desc')" width="400">
+                                        class="prod1" style="cursor: pointer;"
+                                        onclick="showOrder('Bagprod1', 'Bagprod1name', 'Bagprod1desc', 'Bagprod1price')" width="400">
                                 </div>
                             </div>
                             <p id="Bagprod1name" class="prod1name"><b>Brazilian Santos Bagged Coffee </b></p>
+                            <p id="Bagprod1price" class="prod1price">Price: ₱79</p>
                             <p id="Bagprod1desc" class="prod1name">Smooth, mild, nutty sweetness.
                             </p>
                         </div>
@@ -294,21 +348,26 @@
                             <div class="boxprod2">
                                 <div class="prod2">
                                     <img src="Images/CoffeeImage/Bag/COFFEE BAG 2.jpg" id="Bagprod2" alt="Hmmmm Coffee"
-                                        class="prod2" style="cursor: pointer;" onclick="showOrder('Bagprod2', 'Bagprod2name', 'Bagprod2desc')" width="400">
+                                        class="prod2" style="cursor: pointer;"
+                                        onclick="showOrder('Bagprod2', 'Bagprod2name', 'Bagprod2desc', 'Bagprod2price')" width="400">
                                 </div>
                             </div>
                             <p id="Bagprod2name" class="prod2name"><b>Kenyan AA Bagged Coffee </b></p>
-                            <p id="Bagprod2desc" class="prod2name">Description: Bright acidity, wine-like, fruity undertones.
+                            <p id="Bagprod2price" class="prod1price">Price: ₱179</p>
+                            <p id="Bagprod2desc" class="prod2name">Description: Bright acidity, wine-like, fruity
+                                undertones.
                             </p>
                         </div>
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
                                     <img src="Images/CoffeeImage/Bag/COFFEE BAG 3.jpg" id="Bagprod3" alt="Hmmmm Coffee"
-                                        class="prod3" style="cursor: pointer;" onclick="showOrder('Bagprod3', 'Bagprod3name', 'Bagprod3desc')" width="400">
+                                        class="prod3" style="cursor: pointer;"
+                                        onclick="showOrder('Bagprod3', 'Bagprod3name', 'Bagprod3desc', 'Bagprod3price')" width="400">
                                 </div>
                             </div>
                             <p id="Bagprod3name" class="prod3name"><b>Sumatra Mandheling Bagged Coffee </b></p>
+                            <p id="Bagprod3price" class="prod1price">Price: ₱209</p>
                             <p id="Bagprod3desc" class="prod3name">Earthy, full-bodied, hints of chocolate and spice.
                             </p>
                         </div>
@@ -316,22 +375,28 @@
                             <div class="boxprod4">
                                 <div class="prod4">
                                     <img src="Images/CoffeeImage/Bag/COFFEE BAG 4.jpg" id="Bagprod4" alt="Hmmmm Coffee"
-                                        class="prod4" style="cursor: pointer;" onclick="showOrder('Bagprod4', 'Bagprod4name', 'Bagprod4desc')" width="350">
+                                        class="prod4" style="cursor: pointer;"
+                                        onclick="showOrder('Bagprod4', 'Bagprod4name', 'Bagprod4desc', 'Bagprod4price')" width="350">
                                 </div>
                             </div>
                             <p id="Bagprod4name" class="prod4name"><b>Ethiopian Yirgacheffe Bagged Coffee </b></p>
-                            <p id="Bagprod4desc" class="prod4name">Floral aroma, citrusy brightness, complex flavor profile.
+                            <p id="Bagprod4price" class="prod1price">Price: ₱149</p>
+                            <p id="Bagprod4desc" class="prod4name">Floral aroma, citrusy brightness, complex flavor
+                                profile.
                             </p>
                         </div>
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
                                     <img src="Images/CoffeeImage/Bag/COFFEE BAG 5.JPG" id="Bagprod5" alt="Hmmmm Coffee"
-                                        class="prod5" style="cursor: pointer;" onclick="showOrder('Bagprod5', 'Bagprod5name', 'Bagprod5desc')" width="250">
+                                        class="prod5" style="cursor: pointer;"
+                                        onclick="showOrder('Bagprod5', 'Bagprod5name', 'Bagprod5desc', 'Bagprod5price')" width="250">
                                 </div>
                             </div>
                             <p id="Bagprod5name" class="prod5name"><b>Colombian Single-Origin Bagged Coffee </b></p>
-                            <p id="Bagprod5desc" class="prod5name">Rich Colombian beans, medium-bodied with nutty and fruity notes.
+                            <p id="Bagprod5price" class="prod1price">Price: ₱319</p>
+                            <p id="Bagprod5desc" class="prod5name">Rich Colombian beans, medium-bodied with nutty and
+                                fruity notes.
                             </p>
                         </div>
                     </div>
@@ -341,56 +406,74 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 1.jpg" id="Bakedprod1" alt="Hmmmm Coffee"
-                                        class="prod1" style="cursor: pointer;" onclick="showOrder('Bakedprod1', 'Bakedprod1name', 'Bakedprod1desc')" width="400">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 1.jpg" id="Bakedprod1"
+                                        alt="Hmmmm Coffee" class="prod1" style="cursor: pointer;"
+                                        onclick="showOrder('Bakedprod1', 'Bakedprod1name', 'Bakedprod1desc', 'Bakedprod1price')"
+                                        width="400">
                                 </div>
                             </div>
                             <p id="Bakedprod1name" class="prod1name"><b>Coffee Bean Bark </b></p>
-                            <p id="Bakedprod1desc" class="prod1name">Chocolate bark with coffee beans embedded for flavor and texture.
+                            <p id="Bakedprod1price" class="prod1price">Price: ₱50</p>
+                            <p id="Bakedprod1desc" class="prod1name">Chocolate bark with coffee beans embedded for
+                                flavor and texture.
                             </p>
                         </div>
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 2.jpg" id="Bakedprod2" alt="Hmmmm Coffee"
-                                        class="prod2" style="cursor: pointer;" onclick="showOrder('Bakedprod2', 'Bakedprod2name', 'Bakedprod2desc')" width="400">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 2.jpg" id="Bakedprod2"
+                                        alt="Hmmmm Coffee" class="prod2" style="cursor: pointer;"
+                                        onclick="showOrder('Bakedprod2', 'Bakedprod2name', 'Bakedprod2desc', 'Bakedprod2price')"
+                                        width="400">
                                 </div>
                             </div>
                             <p id="Bakedprod2name" class="prod2name"><b>Coffee Cheesecake </b></p>
-                            <p id="Bakedprod2desc" class="prod2name">Cheesecake flavored with coffee, often with a coffee-infused crust or topping.
+                            <p id="Bakedprod2price" class="prod1price">Price: ₱150</p>
+                            <p id="Bakedprod2desc" class="prod2name">Cheesecake flavored with coffee, often with a
+                                coffee-infused crust or topping.
                             </p>
                         </div>
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 3.jpg" id="Bakedprod3" alt="Hmmmm Coffee"
-                                        class="prod3" style="cursor: pointer;" onclick="showOrder('Bakedprod3', 'Bakedprod3name', 'Bakedprod3desc')" width="400">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 3.jpg" id="Bakedprod3"
+                                        alt="Hmmmm Coffee" class="prod3" style="cursor: pointer;"
+                                        onclick="showOrder('Bakedprod3', 'Bakedprod3name', 'Bakedprod3desc', 'Bakedprod3price')"
+                                        width="400">
                                 </div>
                             </div>
                             <p id="Bakedprod3name" class="prod3name"><b>Crispy Coffee Cookies</b></p>
+                            <p id="Bakedprod3price" class="prod1price">Price: ₱90</p>
                             <p id="Bakedprod3desc" class="prod3name">Cookies with a crispy texture and coffee flavor.
                             </p>
                         </div>
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 4.jpg" id="Bakedprod4" alt="Hmmmm Coffee"
-                                        class="prod4" style="cursor: pointer;" onclick="showOrder('Bakedprod4', 'Bakedprod4name', 'Bakedprod4desc')" width="400">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 4.jpg" id="Bakedprod4"
+                                        alt="Hmmmm Coffee" class="prod4" style="cursor: pointer;"
+                                        onclick="showOrder('Bakedprod4', 'Bakedprod4name', 'Bakedprod4desc', 'Bakedprod4price')"
+                                        width="400">
                                 </div>
                             </div>
                             <p id="Bakedprod4name" class="prod4name"><b>White Chocolate-Cappuccino Cookies </b></p>
+                            <p id="Bakedprod4price" class="prod1price">Price: ₱70</p>
                             <p id="Bakedprod4desc" class="prod4name">Cookies with white chocolate and cappuccino flavor.
                             </p>
                         </div>
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 5.jpg" id="Bakedprod5" alt="Hmmmm Coffee"
-                                        class="prod5" style="cursor: pointer;" onclick="showOrder('Bakedprod5', 'Bakedprod5name', 'Bakedprod5desc')" width="400">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 5.jpg" id="Bakedprod5"
+                                        alt="Hmmmm Coffee" class="prod5" style="cursor: pointer;"
+                                        onclick="showOrder('Bakedprod5', 'Bakedprod5name', 'Bakedprod5desc', 'Bakedprod5price')"
+                                        width="400">
                                 </div>
                             </div>
                             <p id="Bakedprod5name" class="prod5name"><b>Spiced Cappuccino Kiss Cookies </b></p>
-                            <p id="Bakedprod5desc" class="prod5name">Cookies flavored with spices reminiscent of a cappuccino.
+                            <p id="Bakedprod5price" class="prod1price">Price: ₱120</p>
+                            <p id="Bakedprod5desc" class="prod5name">Cookies flavored with spices reminiscent of a
+                                cappuccino.
                             </p>
                         </div>
                     </div>

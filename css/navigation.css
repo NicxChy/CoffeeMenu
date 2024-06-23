@@ -11,6 +11,11 @@
   transform: scale(1.1);
 }
 
+body {
+  background-image: url('../Images/CoffeeImage/CoffeeShopBlur.png');
+  background-size: cover;
+
+}
 .basket {
   display: flex;
   transform-origin: 10% 65%;
@@ -239,3 +244,5 @@
   -ms-transform: scale(0.9);
   transform: scale(0.9);
 }
+
+

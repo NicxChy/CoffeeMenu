@@ -3,7 +3,7 @@
 
     include("DataBase.php");
 
-    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'GET' && !is_admin()) {
+    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'POST' && !is_admin()){
         
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -43,21 +43,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="manifest" href="/manifest.json">
+
     <link rel="stylesheet" href="css/navigation.css">
-    <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)'
-        href='css/mobilenavigation.css' />
+    <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)' href='css/mobilenavigation.css' />
     <link rel="stylesheet" href="css/style.css">
     <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)' href='css/mobile.css' />
+
     <script src="javascript/profile.js"></script>
     <script src="javascript/script.js"></script>
 </head>
 
 
 <body onload="getRandomImage()">
-
     
     <h1></h1>
-
     <nav class="navbar">
         <ul>
             <li><a href="index.php" class="navTitles">Home</a> </li>
@@ -67,7 +66,7 @@
             <li> <img class="profile" src="Images/Icons/ProfileIcon.png" onclick="showProfile()" alt="Hmmmm Coffee"
                     width="25" height="25"> </li>
             <li>
-                <a href="basket.php">
+                <a href="basket.php?MenuBack=mainPage">
                     <img class="basket" src="Images/Icons/paperbag.png" alt="Hmmmm Coffee" width="25" height="25">
                 </a>
             </li>

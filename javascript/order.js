@@ -67,7 +67,7 @@ function Milk(Milk) {
 }
 
 
-function showOrder(product, name, desc) {
+function showOrder(product, name, desc, price) {
   //Display Order System
   var y = document.getElementById("OrderUp");
   y.style.display = "block";
@@ -78,9 +78,11 @@ function showOrder(product, name, desc) {
 
   var Title = document.getElementById(name).innerHTML;
   var Description = document.getElementById(desc).innerHTML;
+  var Price = document.getElementById(price).innerHTML;
 
   document.getElementById("orderTitle").innerHTML = Title;
   document.getElementById("orderDescription").innerHTML = Description;
+  document.getElementById("OrderPrice").innerHTML = Price;
 }
 
 
@@ -91,28 +93,57 @@ function closeOrder() {
 }
 
 
-  function ToCart(){
+
+
+
+function moveOrder() {
+  const input2 = document.getElementById("inputQuant");
+  if (Number(input2.value) > 0) {
+    // Get the element to move
+    var orderImage = document.getElementById('orderImage').src;
+    var orderTitle = document.getElementById('orderTitle').innerHTML;
+    var orderAmount = document.getElementById('inputQuant').value;
+    // Store the element's HTML in localStorage
+    localStorage.setItem('elementHTML', orderImage);
+    localStorage.setItem('elementHTML2', orderTitle);
+    localStorage.setItem('elementHTML3', orderAmount);
+    // Optionally, navigate to the second page
+    window.location.href = 'basket.php';
+  } else {
+    alert("You can't Order Nothing");
+  }
+
+}
+
+function retrieveOrder() {
+  // Get the stored element's HTML from localStorage
+  var Image = localStorage.getItem('elementHTML');
+  var Title = localStorage.getItem('elementHTML2');
+  var Amount = localStorage.getItem('elementHTML3');
+  // If there is stored HTML, insert it into the target div
+  if (Image) {
     const ele = document.getElementById('cartBox');
     const newDiv = document.createElement('div');
-    newDiv.innerHTML =  
-    `
+    newDiv.innerHTML +=
+      `
          <div class="box">
                             
-                            <img class="cancelButton" src="Images/Icons/CancelButton.png" alt="Hmmmm Coffee" width="50"
+                            <img class="cancelButton" src="Images/Icons/BackButton.svg" alt="Hmmmm Coffee" width="50"
                                 height="50">
                             <div class="BasketProduct">
-                                <img src="Images/CoffeeImage/Hot/HOT COFFEE 3.jpg" alt="Hmmmm Coffee"
+                                <img src=` + Image + ` alt="Hmmmm Coffee"
                                     class="OrderProduct" width="300" height="250">
                             </div>
                             
                             <div class="centerText">
-                                <p>Kopiko</p>
+                                <p>`+ Title + `</p>
                             </div>
-                            <div class="amountNumber"><p id="amountQuant" >0</p0></div>
+                            <div class="amountNumber"><p id="amountQuant" >`+ Amount +`</p0></div>
                             <button id="addAmount" class="addButton" onclick="incrementAmount()">+</button>
                             <button id="minusAmount" class="minusButton" onclick="decrementAmount()">-</button>
-                            <div class="amountNumber2"><p >₱99</p0></div>
+                            <div class="amountNumber2"><p>  </p0></div>
                         </div>
     `;
     ele.appendChild(newDiv);
+  }
 }

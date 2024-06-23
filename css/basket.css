@@ -9,7 +9,11 @@ main {
 
 }
 
-
+body {
+    background-image: url('../Images/CoffeeImage/CoffeeShopBlur.png');
+    background-size: cover;
+  
+  }
 .navbar {
     Margin-top: 10px;
    

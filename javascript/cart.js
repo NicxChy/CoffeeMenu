@@ -8,3 +8,5 @@ function decrementAmount() {
         document.getElementById("amountQuant").innerHTML = d - 1;
     }
 }
+
+

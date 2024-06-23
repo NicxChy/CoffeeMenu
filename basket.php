@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -13,24 +13,56 @@
     <link rel="stylesheet" href="css/basket.css">
     <script src="javascript/order.js"></script>
     <script src="javascript/cart.js"></script>
-
 </head>
+
+
+<script>
+
+    window.onload = function () {
+        const params = new URLSearchParams(window.location.search);
+        retrieveOrder();
+        var x;
+        if (params.get('MenuBack') === 'menuPage') {
+            var x = "menu.php";
+        } else if (params.get('MenuBack') === 'mainPage'){
+            var x = "index.php";
+        } else if (params.get('MenuBack') === 'coffeePage'){
+            var x = "coffee.php";
+        } else {
+            var x = "coffee.php";
+        }
+            const ele = document.getElementById('BackButton');
+            const remo = document.getElementById('Remove');
+            const newDiv = document.createElement('div');
+            newDiv.innerHTML =
+                `<a href="` + x + `">
+                        <img class="backButton" src="Images/Icons/BackButton.svg" alt="Hmmmm Coffee" width="50"
+                        height="50">
+                      </a> `;
+
+            ele.appendChild(newDiv);
+            remo.remove();
+        
+            
+    };
+</script>
 
 <body>
     <main>
         <div id="OrderUp" class="orderBox" style="display:block">
             <nav class="navbar">
                 <ul>
-                    <li> <a href="index.php">
-                            <img class="backButton" src="Images/Icons/BackButton.svg" alt="Hmmmm Coffee" width="50"
-                                height="50">
-                        </a>
+                    <li id="BackButton">
+                    <a href="index.php" id="Remove">
+                        <img class="backButton" src="Images/Icons/BackButton.svg" alt="Hmmmm Coffee" width="50"
+                        height="50">
+                      </a> 
                     </li>
                     <li>
-                     
-                            <img class="favorite" src="Images/Icons/HeartIcon.png" alt="Hmmmm Coffee" onclick="ToCart()" width="50"
-                                height="50">
-                     
+
+                        <img class="favorite" src="Images/Icons/HeartIcon.png" alt="Hmmmm Coffee" onclick="ToCart()"
+                            width="50" height="50">
+
                     </li>
                 </ul>
             </nav>
@@ -42,24 +74,7 @@
 
 
 
-                        <div class="box">
-                            
-                            <img class="cancelButton" src="Images/Icons/CancelButton.png" alt="Hmmmm Coffee" width="50"
-                                height="50">
-                            <div class="BasketProduct">
-                                <img src="Images/CoffeeImage/Hot/HOT COFFEE 3.jpg" alt="Hmmmm Coffee"
-                                    class="OrderProduct" width="300" height="250">
-                            </div>
-                            
-                            <div class="centerText">
-                                <p>Kopiko</p>
-                            </div>
-                            <div class="amountNumber"><p id="amountQuant" >0</p0></div>
-                            <button id="addAmount" class="addButton" onclick="incrementAmount()">+</button>
-                            <button id="minusAmount" class="minusButton" onclick="decrementAmount()">-</button>
-                            <div class="amountNumber2"><p >₱99</p0></div>
-                        </div>
-
+                       
 
 
                     </ul>
