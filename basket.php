@@ -60,8 +60,8 @@ session_start();
                     </li>
                     <li>
 
-                        <img class="favorite" src="Images/Icons/HeartIcon.png" alt="Hmmmm Coffee" onclick="ToCart()"
-                            width="50" height="50">
+                        <!-- <img class="favorite" src="Images/Icons/HeartIcon.png" alt="Hmmmm Coffee" onclick="ToCart()"
+                            width="50" height="50"> -->
 
                     </li>
                 </ul>

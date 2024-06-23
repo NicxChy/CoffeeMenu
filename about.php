@@ -20,7 +20,6 @@
     </nav>
     <main>
         <div class="box">
-            <p class="about"> Logo <br><br> About us </p>
             <div class="inside">
                 <h1 class="about">About us</h1>
                 <div class="wordings">
