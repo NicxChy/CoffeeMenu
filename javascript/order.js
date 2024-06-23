@@ -82,7 +82,7 @@ function showOrder(product, name, desc, price) {
 
   document.getElementById("orderTitle").innerHTML = Title;
   document.getElementById("orderDescription").innerHTML = Description;
-  document.getElementById("OrderPrice").innerHTML = Price;
+  document.getElementById("orderPrice").innerHTML = Price;
 }
 
 
@@ -130,7 +130,7 @@ function moveOrder() {
 }
 
 function retrieveOrder() {
-  // Get the stored element's HTML from localStorage
+
   var Image = localStorage.getItem('elementHTML');
   var Title = localStorage.getItem('elementHTML2');
   var Amount = localStorage.getItem('elementHTML3');
@@ -148,7 +148,7 @@ function retrieveOrder() {
   } else {
     localStorage.setItem('number', 0);
   }
-  // If there is stored HTML, insert it into the target div
+
 
     if (Image) {
       const ele = document.getElementById('cartBox');
@@ -211,6 +211,58 @@ function retrieveOrder() {
       localStorage.removeItem('elementHTML6');
       localStorage.setItem('number', 1);
   } 
-
-    
   }
+
+  function placeOrder() {
+    const email = '<?php echo $_SESSION["email"]; ?>';
+    let order = [];
+    let total = 0;
+
+    const cartItems = document.getElementById('cartBox').children;
+    for (let item of cartItems) {
+        let itemTitle = item.querySelector('.centerText p').innerText;
+        let itemAmount = parseInt(item.querySelector('.amountNumber p').innerText);
+        let itemPrice = parseFloat(item.querySelector('.OrderProduct').getAttribute('data-price')); 
+        
+        // Check if itemPrice is a valid number
+        if (isNaN(itemPrice)) {
+            console.error('Invalid item price:', itemPrice);
+            alert('Invalid item price detected. Please check your items.');
+            return;
+        }
+        
+        order.push({
+            title: itemTitle,
+            amount: itemAmount,
+            price: itemPrice
+        });
+        total += itemPrice * itemAmount;
+    }
+
+    // Debugging: Output order details
+    console.log('Order:', order);
+    console.log('Total:', total);
+
+    // Send order data to server
+    fetch('place_order.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: email, order: order, total: total })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Order placed successfully!');
+            localStorage.clear();
+            document.getElementById('cartBox').innerHTML = '';
+        } else {
+            alert('Failed to place order: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while placing the order.');
+    });
+}

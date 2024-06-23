@@ -67,7 +67,7 @@
                 
                 </span>
             </div>
-            <button id="addCart" class="addToCart">Place Order</input>
+            <button id="addCart" class="addToCart">Add To Cart</input>
 
         </div>
     </main>

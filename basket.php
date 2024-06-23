@@ -1,5 +1,8 @@
 <?php
+
 session_start();
+include("DataBase.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -42,49 +45,36 @@ session_start();
 
             ele.appendChild(newDiv);
             remo.remove();
-        
-            
     };
+
 </script>
 
 <body>
     <main>
-        <div id="OrderUp" class="orderBox" style="display:block">
+    <div id="OrderUp" class="orderBox" style="display:block">
             <nav class="navbar">
                 <ul>
                     <li id="BackButton">
-                    <a href="index.php" id="Remove">
-                        <img class="backButton" src="Images/Icons/BackButton.svg" alt="Hmmmm Coffee" width="50"
-                        height="50">
-                      </a> 
+                        <a href="index.php" id="Remove">
+                            <img class="backButton" src="Images/Icons/BackButton.svg" alt="Hmmmm Coffee" width="50" height="50">
+                        </a> 
                     </li>
-                    <li>
-
-                        <!-- <img class="favorite" src="Images/Icons/HeartIcon.png" alt="Hmmmm Coffee" onclick="ToCart()"
-                            width="50" height="50"> -->
-
-                    </li>
+                <li></li>
                 </ul>
-            </nav>
 
+            </nav>
 
             <div class="container">
                 <div id="scrollArea" class="scroll" style="overflow-y:scroll; overflow-x:hidden; height:630px;">
-                    <ul id="cartBox">
-
-
-
-                       
-
-
-                    </ul>
+                    <ul id="cartBox"></ul>
                 </div>
+                <li id="place-order">
+                     <button onclick="placeOrder()">Place Order</button>
+                </li>
             </div>
-
-
         </div>
-
+        
     </main>
+    <script src="javascript/order.js"></script>
 </body>
-
 </html>
