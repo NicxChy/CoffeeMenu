@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,7 +128,7 @@
                 <div class="BorderLine"> </div>
 
                 <div class="OrderProduct">
-                    <img id="orderImage" alt="Hmmmm Coffee" class="OrderProduct" width="400" height="400">
+                    <img id="orderImage" alt="Hmmmm Coffee" class="OrderProduct" width="450" height="400">
 
 
                 </div>
@@ -133,10 +136,9 @@
                 <p id="orderTitle" class="ProductOrderName"></p>
                 <div class="ProductOrderDesc ellipsis">
                     <span id="orderDescription" class="ProductOrderDesc-concat">
-
                     </span>
                 </div>
-                <button id="addCart" class="addToCart">Place Order</input>
+                <button id="addCart" class="addToCart" onclick="ToCart()">Place Order</input>
 
             </div>
             <!--ORDER END -->
@@ -163,14 +165,12 @@
                             <div class="boxprod1">
                                 <div class="prod1">
                                     <img src="Images/CoffeeImage/Hot/HOT COFFEE 1 .jpg" id="prod1" alt="Hmmmm Coffee"
-                                        class="prod1" style="cursor: pointer;"
-                                        onclick="showOrder('prod1', 'prod1name', 'prod1desc')" width="400">
+                                        class="prod1" style="cursor: pointer;" onclick="showOrder('prod1', 'prod1name', 'prod1desc')" width="400">
                                 </div>
                             </div>
-                            <p id="prod1name" class="prod1name"><b>Kopiko </b></p>
-                            <p id="prod1desc" class="prod1name">Something 
+                            <p id="prod1name" class="prod1name"><b>Espresso </b></p>
+                            <p id="prod1desc" class="prod1name">A strong and concentrated coffee made by forcing hot water through finely-ground coffee beans.
                             </p>
-
                         </div>
                         <div class="containerprod2">
                             <div class="boxprod2">
@@ -179,8 +179,8 @@
                                         class="prod2" style="cursor: pointer;" onclick="showOrder('prod2', 'prod2name', 'prod2desc')" width="250">
                                 </div>
                             </div>
-                            <p id="prod2name" class="prod2name"><b>White Krema </b></p>
-                            <p id="prod2desc" class="prod2name"> It's Creamy and it's white
+                            <p id="prod2name" class="prod2name"><b>French Vanilla Cappucino </b></p>
+                            <p id="prod2desc" class="prod2name"> Espresso combined with steamed milk, foam, and French vanilla flavoring
                             </p>
                         </div>
                         <div class="containerprod3">
@@ -190,8 +190,8 @@
                                         class="prod3" style="cursor: pointer;" onclick="showOrder('prod3', 'prod3name', 'prod3desc')" width="400">
                                 </div>
                             </div>
-                            <p id="prod3name" class="prod3name"><b>German Coffee </b></p>
-                            <p id="prod3desc" class="prod3name"> One good o'le whiskey 
+                            <p id="prod3name" class="prod3name"><b>Americano </b></p>
+                            <p id="prod3desc" class="prod3name"> Espresso diluted with hot water, creating a coffee similar in strength to drip coffee.
                             </p>
                         </div>
                         <div class="containerprod4">
@@ -201,8 +201,8 @@
                                         class="prod4" style="cursor: pointer;" onclick="showOrder('prod4', 'prod4name', 'prod4desc')" width="400">
                                 </div>
                             </div>
-                            <p id="prod4name" class="prod4name"><b>Hot Fudge</b></p>
-                            <p id="prod4desc" class="prod4name"> It melts like Chocolate
+                            <p id="prod4name" class="prod4name"><b>Coffee with Tablea (tablet chocoalate made with cacao beans)</b></p>
+                            <p id="prod4desc" class="prod4name"> Traditional Filipino-style coffee made with tablea, which are cocoa tablets dissolved in hot water or milk.
                             </p>
                         </div>
                         <div class="containerprod5">
@@ -212,8 +212,8 @@
                                         class="prod5" style="cursor: pointer;" onclick="showOrder('prod5', 'prod5name', 'prod5desc')" width="355">
                                 </div>
                             </div>
-                            <p id="prod5name" class="prod5name"><b>Dark Beans </b></p>
-                            <p id="prod5desc" class="prod5name"> The Darker you get
+                            <p id="prod5name" class="prod5name"><b>Black Coffee </b></p>
+                            <p id="prod5desc" class="prod5name"> Straightforward coffee made from ground coffee beans and hot water, without milk or sugar.
                             </p>
                         </div>
                     </div>
@@ -223,47 +223,57 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 1.jpg" alt="Hmmmm Coffee"
-                                        class="prod1" width="250">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 1.jpg" id="Iceprod1" alt="Hmmmm Coffee"
+                                        class="prod1" style="cursor: pointer;" onclick="showOrder('Iceprod1', 'Iceprod1name', 'Iceprod1desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod1name"><b>Product Name </b><br><br> Very Cold</p>
+                            <p id="Iceprod1name" class="prod1name"><b>Caramel Cold Brew Latte </b></p>
+                            <p id="Iceprod1desc" class="prod1name">Cold brew coffee with milk, flavored with caramel syrup for a sweet taste.
+                            </p>
                         </div>
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 2.jpeg" alt="Hmmmm Coffee"
-                                        class="prod2" width="250">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 2.jpeg" id="Iceprod2" alt="Hmmmm Coffee"
+                                        class="prod2" style="cursor: pointer;" onclick="showOrder('Iceprod2', 'Iceprod2name', 'Iceprod2desc')" width="250">
                                 </div>
                             </div>
-                            <p class="prod2name"><b>Product Name </b><br><br> IT'S OUT OF THE SCREEN</p>
+                            <p id="Iceprod2name" class="prod2name"><b>Classic Cold Brew </b></p>
+                            <p id="Iceprod2desc" class="prod2name">Coffee brewed with cold water over an extended period, resulting in a smooth and less acidic flavor.
+                            </p>
                         </div>
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 3.jpeg" alt="Hmmmm Coffee"
-                                        class="prod3" width="235">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 3.jpeg" id="Iceprod3" alt="Hmmmm Coffee"
+                                        class="prod3" style="cursor: pointer;" onclick="showOrder('Iceprod3', 'Iceprod3name', 'Iceprod3desc')" width="250">
                                 </div>
                             </div>
-                            <p class="prod3name"><b>Product Name </b><br><br> Looks like a cocktail</p>
+                            <p id="Iceprod3name" class="prod3name"><b>Iced Caffe Latte </b></p>
+                            <p id="Iceprod3desc" class="prod3name">Cold espresso with chilled milk and often sweetened.
+                            </p>
                         </div>
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 4.jpeg" alt="Hmmmm Coffee"
-                                        class="prod4" width="320">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 4.jpeg" id="Iceprod4" alt="Hmmmm Coffee"
+                                        class="prod4" style="cursor: pointer;" onclick="showOrder('Iceprod4', 'Iceprod4name', 'Iceprod4desc')" width="250">
                                 </div>
                             </div>
-                            <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
+                            <p id="Iceprod4name" class="prod4name"><b>Iced Classic with Fresh milk </b></p>
+                            <p id="Iceprod4desc" class="prod4name">Cold brewed coffee served over ice with fresh milk.
+                            </p>
                         </div>
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 5.jpeg" alt="Hmmmm Coffee"
-                                        class="prod5" width="235">
+                                    <img src="Images/CoffeeImage/Cold/COLD COFFEE 5.jpeg" id="Iceprod5" alt="Hmmmm Coffee"
+                                        class="prod5" style="cursor: pointer;" onclick="showOrder('Iceprod5', 'Iceprod5name', 'Iceprod5desc')" width="250">
                                 </div>
                             </div>
-                            <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>
+                            <p id="Iceprod5name" class="prod5name"><b>Dalgona  </b></p>
+                            <p id="Iceprod5desc" class="prod5name">A frothy whipped coffee made by whipping equal parts of instant coffee, sugar, and hot water until fluffy, then served over cold milk.
+                            </p>
                         </div>
                     </div>
 
@@ -272,47 +282,57 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 1.jpg" alt="Hmmmm Coffee" class="prod1"
-                                        width="250">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 1.jpg" id="Bagprod1" alt="Hmmmm Coffee"
+                                        class="prod1" style="cursor: pointer;" onclick="showOrder('Bagprod1', 'Bagprod1name', 'Bagprod1desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod1name"><b>Product Name </b><br><br> Xbox live</p>
+                            <p id="Bagprod1name" class="prod1name"><b>Brazilian Santos Bagged Coffee </b></p>
+                            <p id="Bagprod1desc" class="prod1name">Smooth, mild, nutty sweetness.
+                            </p>
                         </div>
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 2.jpg" alt="Hmmmm Coffee" class="prod2"
-                                        width="350">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 2.jpg" id="Bagprod2" alt="Hmmmm Coffee"
+                                        class="prod2" style="cursor: pointer;" onclick="showOrder('Bagprod2', 'Bagprod2name', 'Bagprod2desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod2name"><b>Product Name </b><br><br> Grenade in the Gravy</p>
+                            <p id="Bagprod2name" class="prod2name"><b>Kenyan AA Bagged Coffee </b></p>
+                            <p id="Bagprod2desc" class="prod2name">Description: Bright acidity, wine-like, fruity undertones.
+                            </p>
                         </div>
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 3.jpg" alt="Hmmmm Coffee" class="prod3"
-                                        width="255">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 3.jpg" id="Bagprod3" alt="Hmmmm Coffee"
+                                        class="prod3" style="cursor: pointer;" onclick="showOrder('Bagprod3', 'Bagprod3name', 'Bagprod3desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod3name"><b>Product Name </b><br><br> Napalm in the Nachos</p>
+                            <p id="Bagprod3name" class="prod3name"><b>Sumatra Mandheling Bagged Coffee </b></p>
+                            <p id="Bagprod3desc" class="prod3name">Earthy, full-bodied, hints of chocolate and spice.
+                            </p>
                         </div>
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 4.jpg" alt="Hmmmm Coffee" class="prod4"
-                                        width="350">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 4.jpg" id="Bagprod4" alt="Hmmmm Coffee"
+                                        class="prod4" style="cursor: pointer;" onclick="showOrder('Bagprod4', 'Bagprod4name', 'Bagprod4desc')" width="350">
                                 </div>
                             </div>
-                            <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
+                            <p id="Bagprod4name" class="prod4name"><b>Ethiopian Yirgacheffe Bagged Coffee </b></p>
+                            <p id="Bagprod4desc" class="prod4name">Floral aroma, citrusy brightness, complex flavor profile.
+                            </p>
                         </div>
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 5.JPG" alt="Hmmmm Coffee" class="prod5"
-                                        width="235">
+                                    <img src="Images/CoffeeImage/Bag/COFFEE BAG 5.JPG" id="Bagprod5" alt="Hmmmm Coffee"
+                                        class="prod5" style="cursor: pointer;" onclick="showOrder('Bagprod5', 'Bagprod5name', 'Bagprod5desc')" width="250">
                                 </div>
                             </div>
-                            <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>
+                            <p id="Bagprod5name" class="prod5name"><b>Colombian Single-Origin Bagged Coffee </b></p>
+                            <p id="Bagprod5desc" class="prod5name">Rich Colombian beans, medium-bodied with nutty and fruity notes.
+                            </p>
                         </div>
                     </div>
 
@@ -321,47 +341,57 @@
                         <div class="containerprod1">
                             <div class="boxprod1">
                                 <div class="prod1">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 1.jpg" alt="Hmmmm Coffee"
-                                        class="prod1" width="250">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 1.jpg" id="Bakedprod1" alt="Hmmmm Coffee"
+                                        class="prod1" style="cursor: pointer;" onclick="showOrder('Bakedprod1', 'Bakedprod1name', 'Bakedprod1desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod1name"><b>Product Name </b><br><br> There's a gun in the grits</p>
+                            <p id="Bakedprod1name" class="prod1name"><b>Coffee Bean Bark </b></p>
+                            <p id="Bakedprod1desc" class="prod1name">Chocolate bark with coffee beans embedded for flavor and texture.
+                            </p>
                         </div>
                         <div class="containerprod2">
                             <div class="boxprod2">
                                 <div class="prod2">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 2.jpg" alt="Hmmmm Coffee"
-                                        class="prod2" width="350">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 2.jpg" id="Bakedprod2" alt="Hmmmm Coffee"
+                                        class="prod2" style="cursor: pointer;" onclick="showOrder('Bakedprod2', 'Bakedprod2name', 'Bakedprod2desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod2name"><b>Product Name </b><br><br> Explosives in the eggs</p>
+                            <p id="Bakedprod2name" class="prod2name"><b>Coffee Cheesecake </b></p>
+                            <p id="Bakedprod2desc" class="prod2name">Cheesecake flavored with coffee, often with a coffee-infused crust or topping.
+                            </p>
                         </div>
                         <div class="containerprod3">
                             <div class="boxprod3">
                                 <div class="prod3">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 3.jpg" alt="Hmmmm Coffee"
-                                        class="prod3" width="235">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 3.jpg" id="Bakedprod3" alt="Hmmmm Coffee"
+                                        class="prod3" style="cursor: pointer;" onclick="showOrder('Bakedprod3', 'Bakedprod3name', 'Bakedprod3desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod3name"><b>Product Name </b><br><br> Jizzin' in the jelly</p>
+                            <p id="Bakedprod3name" class="prod3name"><b>Crispy Coffee Cookies</b></p>
+                            <p id="Bakedprod3desc" class="prod3name">Cookies with a crispy texture and coffee flavor.
+                            </p>
                         </div>
                         <div class="containerprod4">
                             <div class="boxprod4">
                                 <div class="prod4">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 4.jpg" alt="Hmmmm Coffee"
-                                        class="prod4" width="300">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 4.jpg" id="Bakedprod4" alt="Hmmmm Coffee"
+                                        class="prod4" style="cursor: pointer;" onclick="showOrder('Bakedprod4', 'Bakedprod4name', 'Bakedprod4desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod4name"><b>Product Name </b><br><br> Refreshing Cold Coffee for the Weather</p>
+                            <p id="Bakedprod4name" class="prod4name"><b>White Chocolate-Cappuccino Cookies </b></p>
+                            <p id="Bakedprod4desc" class="prod4name">Cookies with white chocolate and cappuccino flavor.
+                            </p>
                         </div>
                         <div class="containerprod5">
                             <div class="boxprod5">
                                 <div class="prod5">
-                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 5.jpg" alt="Hmmmm Coffee"
-                                        class="prod5" width="235">
+                                    <img src="Images/CoffeeImage/Flavored/BAKED FLAVORED 5.jpg" id="Bakedprod5" alt="Hmmmm Coffee"
+                                        class="prod5" style="cursor: pointer;" onclick="showOrder('Bakedprod5', 'Bakedprod5name', 'Bakedprod5desc')" width="400">
                                 </div>
                             </div>
-                            <p class="prod5name"><b>Product Name </b><br><br> Thai Ice Cream, I mean Ice Coffee</p>
+                            <p id="Bakedprod5name" class="prod5name"><b>Spiced Cappuccino Kiss Cookies </b></p>
+                            <p id="Bakedprod5desc" class="prod5name">Cookies flavored with spices reminiscent of a cappuccino.
+                            </p>
                         </div>
                     </div>
                 </div><!--End of ORDER div -->

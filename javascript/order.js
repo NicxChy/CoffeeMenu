@@ -89,3 +89,30 @@ function closeOrder() {
   var y = document.getElementById("OrderUp");
   y.style.display = "none";
 }
+
+
+  function ToCart(){
+    const ele = document.getElementById('cartBox');
+    const newDiv = document.createElement('div');
+    newDiv.innerHTML =  
+    `
+         <div class="box">
+                            
+                            <img class="cancelButton" src="Images/Icons/CancelButton.png" alt="Hmmmm Coffee" width="50"
+                                height="50">
+                            <div class="BasketProduct">
+                                <img src="Images/CoffeeImage/Hot/HOT COFFEE 3.jpg" alt="Hmmmm Coffee"
+                                    class="OrderProduct" width="300" height="250">
+                            </div>
+                            
+                            <div class="centerText">
+                                <p>Kopiko</p>
+                            </div>
+                            <div class="amountNumber"><p id="amountQuant" >0</p0></div>
+                            <button id="addAmount" class="addButton" onclick="incrementAmount()">+</button>
+                            <button id="minusAmount" class="minusButton" onclick="decrementAmount()">-</button>
+                            <div class="amountNumber2"><p >₱99</p0></div>
+                        </div>
+    `;
+    ele.appendChild(newDiv);
+}
