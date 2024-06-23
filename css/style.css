@@ -480,6 +480,9 @@ body {
   transform: translateY(-275px);
 }
 
+#showLogin {
+  display: none;
+}
 
 
 

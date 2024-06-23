@@ -3,7 +3,7 @@ session_start();
 
 include("DataBase.php");
 
-if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'POST' && !is_admin()) {
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $firstname = $_POST['fname'];
     $middlename = $_POST['mname'];
     $lastname = $_POST['lname'];
@@ -13,8 +13,7 @@ if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'POST' && 
 
     try {
         if (!empty($email) && !empty($password) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $query = "INSERT INTO registered (Email, Password, Fname, Mname, Lname, Address) VALUES ('$email', '$hashed_password', '$firstname', '$middlename', '$lastname', '$address')";
-            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+            $query = "INSERT INTO registered (Email, Password, Fname, Mname, Lname, Address) VALUES ('$email', '$password', '$firstname', '$middlename', '$lastname', '$address')";
             $result = mysqli_query($conn, $query);
 
             if ($result) {
@@ -36,68 +35,34 @@ if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'POST' && 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)'
+        href='css/mobilenavigation.css' />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' media='screen and (min-width: 300px) and (max-width: 700px)' href='css/mobile.css' />
     <title>Registration Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #1A2731;
-        }
-        .container {
-            background-color: #FFFFFF;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #5E3D31;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-            border: 1px solid #987F62;
-            border-radius: 4px;
-        }
-        .form-section {
-            margin-bottom: 20px;
-        }
-        .form-section.border-bottom {
-            border-bottom: 2px solid #987F62;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-        .buttons {
-            display: flex;
-            justify-content: space-between;
-        }
-        .buttons button, .buttons a {
-            padding: 10px 15px;
-            text-decoration: none;
-            color: white;
-            border: none;
-            border-radius: 4px;
-        }
-        .buttons button {
-            background-color: #5E3D31;
-        }
-        .buttons a {
-            background-color: #987F62;
-        }
-    </style>
+    <link rel="stylesheet" href="css/Register.css">
+
 </head>
 <body>
+
+    <div class="box">
+
+            <p class="coffee">Le Coffee</p>
+            <p class="menuFont">Register Now! To Order Your First <b class="menuFont2">Coffee</b> from Us</p>
+
+
+            <div class="second">
+                <div class="wrapper">
+                    <div id="img-1"></div>
+                    <div id="img-2"></div>
+                    <div id="img-3"></div>
+                    <div id="img-4"></div>
+                </div>
+            </div>
+
+    </div>
+
     <div class="container">
         <h2>Register</h2>
         <form method="POST" action="#">
@@ -135,5 +100,6 @@ if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER["REQUEST_METHOD"] == 'POST' && 
             </div>
         </form>
     </div>
+
 </body>
 </html>

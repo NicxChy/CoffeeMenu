@@ -8,3 +8,12 @@ function showProfile() {
     }
 
 }
+
+function toggleProfile() {
+    var showLogin = document.getElementById('showLogin');
+    if (showLogin.style.display === 'none' || showLogin.style.display === '') {
+        showLogin.style.display = 'block';
+    } else {
+        showLogin.style.display = 'none';
+    }
+}
